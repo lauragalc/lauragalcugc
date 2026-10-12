@@ -10,18 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Mulish:wght@400;600;700;800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 <style>
 :root{
-  --creme:#f7f3e8;
-  --papel:#ffffff;
-  --oliva:#5f6f45;
-  --oliva-esc:#4a5735;
-  --oliva-claro:#e6ead9;
-  --tomate:#c74b34;
-  --tomate-esc:#a83b26;
-  --tomate-claro:#f6ddd5;
-  --tinta:#2b2a24;
-  --tinta-suave:#57544a;
-  --linha:#e4ddcb;
-  --sombra:0 2px 0 rgba(43,42,36,.06),0 10px 24px -14px rgba(43,42,36,.25);
+  --creme:#f6efe6;
+  --papel:#fffaf5;
+  --oliva:#7a4e34;
+  --oliva-esc:#5c3a26;
+  --oliva-claro:#efe2d6;
+  --tomate:#8c2f3c;
+  --tomate-esc:#6e2230;
+  --tomate-claro:#f2dcdf;
+  --tinta:#2e1f1a;
+  --tinta-suave:#5e4a42;
+  --linha:#e6d8c8;
+  --sombra:0 2px 0 rgba(46,31,26,.06),0 10px 24px -14px rgba(46,31,26,.25);
   --topo:68px;
   --semana:58px;
   --serif:"Lora",Georgia,serif;
@@ -40,7 +40,7 @@ body{
   background-color:var(--creme);
   /* linhas de caderno + margem vermelha */
   background-image:
-    linear-gradient(to right,transparent 38px,rgba(199,75,52,.28) 38px,rgba(199,75,52,.28) 40px,transparent 40px),
+    linear-gradient(to right,transparent 38px,rgba(140,47,60,.28) 38px,rgba(140,47,60,.28) 40px,transparent 40px),
     repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--linha) 31px,var(--linha) 32px);
   padding-bottom:calc(var(--semana) + 8px);
   overflow-x:hidden;
@@ -79,7 +79,7 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
 .btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 -2px var(--tinta)}
 
 /* ===== MENU ===== */
-.topo{position:fixed;inset:0 0 auto 0;height:var(--topo);z-index:100;background:rgba(247,243,232,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--linha)}
+.topo{position:fixed;inset:0 0 auto 0;height:var(--topo);z-index:100;background:rgba(246,239,230,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--linha)}
 .topo .container{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px}
 .logo{font-family:var(--serif);font-weight:700;font-size:1.3rem;text-decoration:none;color:var(--tinta);white-space:nowrap}
 .logo em{color:var(--tomate-esc)}
@@ -111,12 +111,12 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
 
 /* espaço de foto (placeholder em degradê) */
 .foto{position:relative;border-radius:6px;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff}
-.foto .legenda{position:relative;z-index:1;margin:12px;background:rgba(43,42,36,.72);padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.foto .legenda{position:relative;z-index:1;margin:12px;background:rgba(46,31,26,.72);padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.foto-capa{aspect-ratio:4/5;background:linear-gradient(160deg,#c9b98f 0%,#8f9b6c 45%,#5f6f45 100%);border:10px solid var(--papel);box-shadow:var(--sombra);transform:rotate(1.5deg)}
+.foto-capa{aspect-ratio:4/5;background:linear-gradient(160deg,#d9bfa3 0%,#a77857 45%,#7a4e34 100%);border:10px solid var(--papel);box-shadow:var(--sombra);transform:rotate(1.5deg)}
 .moldura-capa{position:relative;max-width:420px;margin-inline:auto;width:100%}
 .adesivo{position:absolute;top:-14px;right:-10px;z-index:2;background:var(--oliva);color:#fff;font-family:var(--mao);font-size:1.5rem;padding:8px 18px;border-radius:8px;transform:rotate(-9deg);box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
-.fita{position:absolute;top:-12px;left:30%;width:110px;height:28px;background:rgba(199,75,52,.35);transform:rotate(-4deg);z-index:2}
+.fita{position:absolute;top:-12px;left:30%;width:110px;height:28px;background:rgba(140,47,60,.35);transform:rotate(-4deg);z-index:2}
 .nota-foto{position:absolute;bottom:-34px;left:0;transform:rotate(-3deg)}
 
 /* faixa de marcas */
@@ -129,7 +129,7 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
 
 /* ===== SOBRE ===== */
 .sobre-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
-.foto-sobre{aspect-ratio:4/5;background:linear-gradient(200deg,#f0c9b8 0%,#d88a6f 50%,#c74b34 100%);border:10px solid var(--papel);box-shadow:var(--sombra);transform:rotate(-2deg)}
+.foto-sobre{aspect-ratio:4/5;background:linear-gradient(200deg,#ecc9cd 0%,#b5606b 50%,#8c2f3c 100%);border:10px solid var(--papel);box-shadow:var(--sombra);transform:rotate(-2deg)}
 .promessas{list-style:none;padding:0;margin:20px 0}
 .promessas li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--linha);font-weight:600}
 .promessas li::before{content:"";flex:0 0 20px;height:20px;margin-top:3px;border:2px solid var(--oliva);border-radius:4px;background:linear-gradient(var(--oliva),var(--oliva)) center/10px 10px no-repeat}
@@ -161,9 +161,9 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
 .trabalhos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;list-style:none;padding:0;margin:0}
 .trabalho{background:var(--papel);border-left:6px solid var(--barra,var(--oliva));border-radius:4px 12px 12px 4px;box-shadow:var(--sombra);padding:12px;margin:0}
 .trabalho[data-nicho="beleza"]{--barra:var(--tomate)}
-.trabalho[data-nicho="comida"]{--barra:#d08a2e}
+.trabalho[data-nicho="comida"]{--barra:#b8793a}
 .trabalho[data-nicho="casa"]{--barra:var(--oliva)}
-.trabalho[data-nicho="viagem"]{--barra:#3f6f8a}
+.trabalho[data-nicho="viagem"]{--barra:#8a5233}
 .trabalho .foto{aspect-ratio:4/5}
 .trabalho .tag{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave)}
 .trabalho h3{font-size:1.1rem;margin:4px 0}
@@ -203,8 +203,8 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
 .contato-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
 .campo{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
 .campo label{font-weight:800;font-size:.95rem}
-.campo input,.campo textarea{font:inherit;color:var(--tinta);padding:12px 14px;border:2px solid #b9b19c;border-radius:8px;background:#fffdf8;width:100%}
-.campo input:focus,.campo textarea:focus{border-color:var(--oliva-esc);outline:3px solid rgba(95,111,69,.3);outline-offset:0}
+.campo input,.campo textarea{font:inherit;color:var(--tinta);padding:12px 14px;border:2px solid #c2ab98;border-radius:8px;background:#fffaf5;width:100%}
+.campo input:focus,.campo textarea:focus{border-color:var(--oliva-esc);outline:3px solid rgba(122,78,52,.3);outline-offset:0}
 .campo textarea{min-height:140px;resize:vertical}
 .confirmacao{display:none;background:var(--oliva-claro);border-left:6px solid var(--oliva);border-radius:4px 10px 10px 4px;padding:16px 18px;font-weight:700}
 .confirmacao.ativa{display:block}
@@ -236,7 +236,7 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
 /* ===== CARD DE CAPTURA ===== */
 .modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
 .modal.aberto{display:flex}
-.modal-fundo{position:absolute;inset:0;background:rgba(30,29,24,.65)}
+.modal-fundo{position:absolute;inset:0;background:rgba(30,20,17,.65)}
 .modal-card{position:relative;width:min(440px,100%);max-height:calc(100vh - 32px);overflow:auto;background:var(--papel);border-left:8px solid var(--tomate);border-radius:6px 14px 14px 6px;padding:30px 24px 24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
 .modal-card h2{font-size:1.7rem}
 .modal-fechar{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:2px solid var(--tinta);background:var(--papel);font-size:1.4rem;line-height:1;cursor:pointer;color:var(--tinta)}
@@ -449,15 +449,15 @@ section{scroll-margin-top:calc(var(--topo) + 12px);padding:72px 0}
       <div class="canais revelar">
         <p class="mao">ou me chama direto por aqui:</p>
         <a class="canal" href="https://wa.me/5519983362423" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4a5735" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#5c3a26" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/></svg>
           <span>WhatsApp<small>(19) 98336-2423</small></span>
         </a>
         <a class="canal" href="mailto:lauragalc@gmail.com">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#a83b26" stroke-width="2" d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#6e2230" stroke-width="2" d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg>
           <span>E-mail<small>lauragalc@gmail.com</small></span>
         </a>
         <a class="canal" href="https://www.instagram.com/eusoualau/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#2b2a24" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#2b2a24" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="#2b2a24"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#2e1f1a" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#2e1f1a" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="#2e1f1a"/></svg>
           <span>Instagram<small>@eusoualau</small></span>
         </a>
       </div>
@@ -546,7 +546,7 @@ const destaques = [
     rotulo: "views no reels",
     titulo: "Título do conteúdo 01",               // PLACEHOLDER
     contexto: "Escreva aqui a marca e o objetivo do vídeo.", // PLACEHOLDER
-    degrade: "linear-gradient(170deg,#d9c7a0,#8f9b6c 55%,#4a5735)"
+    degrade: "linear-gradient(170deg,#e3cdb2,#a77857 55%,#5c3a26)"
   },
   {
     link: "https://www.instagram.com/reel/DcoMxowR5GA/",
@@ -555,7 +555,7 @@ const destaques = [
     rotulo: "views no reels",
     titulo: "Título do conteúdo 02",               // PLACEHOLDER
     contexto: "Escreva aqui a marca e o objetivo do vídeo.", // PLACEHOLDER
-    degrade: "linear-gradient(170deg,#f2cfc0,#d88a6f 55%,#a83b26)"
+    degrade: "linear-gradient(170deg,#efd2d5,#b5606b 55%,#6e2230)"
   },
   {
     link: "#",                                     // PLACEHOLDER: cole o link do terceiro vídeo
@@ -564,7 +564,7 @@ const destaques = [
     rotulo: "views no reels",
     titulo: "Título do conteúdo 03",               // PLACEHOLDER
     contexto: "Escreva aqui a marca e o objetivo do vídeo.", // PLACEHOLDER
-    degrade: "linear-gradient(170deg,#e9e1cc,#a59c84 55%,#2b2a24)"
+    degrade: "linear-gradient(170deg,#ebdfd2,#a08b7c 55%,#2e1f1a)"
   }
 ];
 
@@ -658,10 +658,10 @@ const depoimentos = [
 
   /* Filtros e trabalhos */
   const degradesNicho = {
-    beleza: "linear-gradient(160deg,#f6ddd5,#d88a6f)",
-    comida: "linear-gradient(160deg,#f5e2bf,#d08a2e)",
-    casa:   "linear-gradient(160deg,#e6ead9,#8f9b6c)",
-    viagem: "linear-gradient(160deg,#dbe7ec,#5b8ba3)"
+    beleza: "linear-gradient(160deg,#f2dcdf,#b5606b)",
+    comida: "linear-gradient(160deg,#f3e0c6,#b8793a)",
+    casa:   "linear-gradient(160deg,#efe2d6,#a77857)",
+    viagem: "linear-gradient(160deg,#ecd9c6,#a5653f)"
   };
   const nomeNicho = (id) => (nichos.find((n) => n.id === id) || { nome: id }).nome;
 
