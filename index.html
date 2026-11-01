@@ -3,408 +3,532 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laura Alcantara · Portfólio UGC Creator</title>
-<meta name="description" content="Laura Alcantara, creator UGC em Limeira. Vídeos e fotos para marcas de beleza, comida, casa e decoração e viagem, com um olhar humano.">
+<title>Laura Alcântara · Portfólio UGC Creator</title>
+<meta name="description" content="Laura Alcântara, creator UGC bilíngue. Vídeos e fotos UGC para marcas e hospedagens, em português e inglês.">
+<link rel="alternate" hreflang="pt-BR" href="https://lauragalc.github.io/lauragalcugc/">
+<link rel="alternate" hreflang="en" href="https://lauragalc.github.io/lauragalcugc-en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  /* ============ BASE DO JORNAL ============ */
+  /* ============ LAURA ALCANTARA · COZY TRAVEL JOURNAL ============
+     Warm neutrals do the work, so photos and videos are the colour.
+     Cream + oat grounds, cocoa ink, clay accent, sage only in tiny touches.
+     Photo slots are neutral linen: real content replaces them. */
   :root {
-    --papel: #efece4;
-    --papel-escuro: #e3dfd3;
-    --tinta: #111111;
-    --tinta-suave: #3a3a3a;
-    --vermelho: #c0392b;
-    --vermelho-escuro: #a12f23;
-    --fio: #111111;
+    --papel: #FBF7F1;          /* page background, warm cream */
+    --aveia: #F3ECE2;          /* alternate sections (oat) */
+    --branco: #FFFDF9;         /* polaroids, postcards, cards */
+    --linho: #E9E1D5;          /* empty photo/video slot */
+    --tinta: #2F2722;          /* main text, warm near-black */
+    --tinta-suave: #74675D;    /* secondary text, captions */
+    --fio: #E2D8CA;            /* hairlines */
+    --cacau: #3B2F2A;          /* primary buttons, cozy dark section */
+    --cacau-suave: #5A4A41;    /* button hover */
+    --argila: #C07A60;         /* clay: numerals, small marks, large text only */
+    --argila-escura: #9A5743;  /* clay as readable text */
+    --argila-clara: #F1DDD3;   /* soft clay wash */
+    --salvia: #6E8A73;         /* tiny touches: dot, ticks */
+    --salvia-clara: #E3EBE0;
+    --sombra: 0 1px 2px rgba(59,47,42,.06), 0 10px 28px rgba(59,47,42,.08);
     --serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
     --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
-    --largura: 1180px;
-    --topo: 104px;
+    --raio: 16px;
+    --raio-p: 8px;
+    --largura: 1160px;
+    --topo: 96px;
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: var(--topo); -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0;
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.6;
-    color: var(--tinta);
-    background-color: var(--papel);
-    /* textura de meio-tom do papel de jornal */
-    background-image: radial-gradient(rgba(0,0,0,.07) 0.8px, transparent 1.1px);
-    background-size: 4px 4px;
-    overflow-x: hidden;
+    margin: 0; font-family: var(--sans); font-size: 17px; line-height: 1.7;
+    color: var(--tinta); background: var(--papel); overflow-x: hidden;
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
-  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.1; margin: 0; text-transform: uppercase; letter-spacing: .01em; }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0; letter-spacing: -.005em; }
+  h1 em, h2 em { font-style: italic; color: var(--argila-escura); }
   p { margin: 0 0 1em; }
-  .container { width: 100%; max-width: var(--largura); margin: 0 auto; padding: 0 20px; }
-  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .container { width: 100%; max-width: var(--largura); margin: 0 auto; padding: 0 24px; }
 
-  :focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; }
-  .pular {
-    position: absolute; left: 12px; top: -60px; z-index: 300;
-    background: var(--tinta); color: var(--papel); padding: 10px 16px; font-weight: 700; text-decoration: none;
-  }
+  :focus-visible { outline: 2px solid var(--argila-escura); outline-offset: 3px; border-radius: 4px; }
+  .pular { position: absolute; left: 12px; top: -60px; z-index: 300; border-radius: 999px; background: var(--cacau); color: var(--papel); padding: 10px 18px; font-weight: 600; text-decoration: none; }
   .pular:focus { top: 12px; }
 
-  /* filete duplo, a assinatura do jornal */
-  .filete-duplo { border: 0; border-top: 3px solid var(--fio); border-bottom: 1px solid var(--fio); height: 7px; margin: 0; }
+  .filete-duplo { display: none; }
 
-  /* ============ CABEÇALHO FIXO ============ */
-  .topo {
-    position: fixed; inset: 0 0 auto 0; z-index: 100;
-    background-color: var(--papel);
-    background-image: radial-gradient(rgba(0,0,0,.07) 0.8px, transparent 1.1px);
-    background-size: 4px 4px;
-  }
-  .topo-edicao {
-    display: flex; justify-content: space-between; gap: 12px;
-    font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
-    padding: 7px 0 5px; color: var(--tinta-suave);
-  }
-  .topo-edicao span:last-child { color: var(--vermelho); }
-  .topo-nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 0; }
-  .marca-nome {
-    font-family: var(--serif); font-weight: 700; font-size: 22px; text-decoration: none; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap;
-  }
-  .marca-nome em { color: var(--vermelho); font-style: normal; }
-  .menu { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
-  .menu a {
-    display: block; padding: 6px 10px; text-decoration: none; font-size: 13px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: .1em; border-bottom: 2px solid transparent;
-  }
-  .menu a:hover { border-bottom-color: var(--vermelho); color: var(--vermelho); }
-  .botao-menu {
-    display: none; background: none; border: 2px solid var(--tinta); padding: 8px 10px; cursor: pointer;
-    font: 700 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta);
-    align-items: center; gap: 8px;
-  }
-  .botao-menu .barras, .botao-menu .barras::before, .botao-menu .barras::after {
-    display: block; width: 18px; height: 2px; background: var(--tinta); position: relative; transition: transform .25s, background .25s;
-  }
+  /* ============ HEADER ============ */
+  .topo { position: fixed; inset: 0 0 auto 0; z-index: 100; background: rgba(251,247,241,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--fio); }
+  .topo > .filete-duplo { display: none; }
+  .topo-edicao { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; padding: 8px 0 0; color: var(--tinta-suave); }
+  .topo-edicao span:last-child { color: var(--argila-escura); }
+  .topo-nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 0 12px; }
+  .marca-nome { font-family: var(--serif); font-size: 22px; text-decoration: none; white-space: nowrap; }
+  .marca-nome em { color: var(--argila-escura); font-style: italic; }
+  .menu { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; align-items: center; }
+  .menu a { display: block; padding: 6px 12px; text-decoration: none; font-size: 14px; font-weight: 500; border-radius: 999px; transition: background .2s; }
+  .menu a:hover { background: var(--aveia); }
+  .menu a.idioma { border: 1px solid var(--fio); margin-left: 8px; font-weight: 600; font-size: 12px; letter-spacing: .1em; }
+  .menu a.idioma:hover { background: var(--cacau); color: var(--papel); border-color: var(--cacau); }
+  .botao-menu { display: none; background: none; border: 1px solid var(--fio); border-radius: 999px; padding: 8px 14px; cursor: pointer; font: 600 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--tinta); align-items: center; gap: 8px; }
+  .botao-menu .barras, .botao-menu .barras::before, .botao-menu .barras::after { display: block; width: 16px; height: 1.5px; background: var(--tinta); position: relative; transition: transform .25s, background .25s; }
   .botao-menu .barras::before, .botao-menu .barras::after { content: ""; position: absolute; left: 0; }
-  .botao-menu .barras::before { top: -6px; }
-  .botao-menu .barras::after { top: 6px; }
+  .botao-menu .barras::before { top: -5px; }
+  .botao-menu .barras::after { top: 5px; }
   .botao-menu[aria-expanded="true"] .barras { background: transparent; }
-  .botao-menu[aria-expanded="true"] .barras::before { transform: translateY(6px) rotate(45deg); }
-  .botao-menu[aria-expanded="true"] .barras::after { transform: translateY(-6px) rotate(-45deg); }
+  .botao-menu[aria-expanded="true"] .barras::before { transform: translateY(5px) rotate(45deg); }
+  .botao-menu[aria-expanded="true"] .barras::after { transform: translateY(-5px) rotate(-45deg); }
 
-  /* ============ BOTÕES ============ */
-  .botao {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    padding: 14px 24px; font: 700 14px var(--sans); letter-spacing: .1em; text-transform: uppercase;
-    text-decoration: none; border: 2px solid var(--tinta); cursor: pointer; transition: transform .15s, background .2s, color .2s;
-  }
-  .botao-primario { background: var(--vermelho); border-color: var(--vermelho); color: #fff; }
-  .botao-primario:hover { background: var(--vermelho-escuro); border-color: var(--vermelho-escuro); }
-  .botao-secundario { background: transparent; color: var(--tinta); }
-  .botao-secundario:hover { background: var(--tinta); color: var(--papel); }
+  /* ============ BUTTONS ============ */
+  .botao { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; font: 600 15px var(--sans); text-decoration: none; border: 1px solid transparent; border-radius: 999px; cursor: pointer; transition: transform .15s, background .2s, color .2s, border-color .2s; }
+  .botao-primario { background: var(--cacau); color: var(--papel); }
+  .botao-primario:hover { background: var(--cacau-suave); }
+  .botao-secundario { background: transparent; color: var(--tinta); border-color: #CDBFAE; }
+  .botao-secundario:hover { background: var(--branco); border-color: var(--tinta-suave); }
   .botao:active { transform: translateY(1px); }
 
-  /* ============ BLOCOS DE FOTO E VÍDEO (placeholders) ============ */
-  .foto {
-    position: relative; width: 100%; overflow: hidden; background: #888;
-    background-image:
-      radial-gradient(rgba(0,0,0,.28) 1px, transparent 1.4px),
-      linear-gradient(160deg, #d9d6cc 0%, #8f8b82 45%, #3b3936 100%);
-    background-size: 5px 5px, 100% 100%;
-    /* preto e branco de verdade: vale para o bloco e para a imagem real */
-    filter: grayscale(1) contrast(1.15);
-  }
-  .foto img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.25); }
-  .foto-legenda-formato {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    background: rgba(239,236,228,.92); color: var(--tinta); padding: 6px 12px;
-    font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; border: 1px solid var(--tinta);
-  }
+  /* ============ PHOTO / VIDEO SLOTS (neutral, the content brings the colour) ============ */
+  .foto { position: relative; width: 100%; overflow: hidden; border-radius: 12px; background: var(--linho); }
+  .foto img { width: 100%; height: 100%; object-fit: cover; }
+  .foto-legenda-formato { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; color: var(--tinta-suave); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .foto-legenda-formato::before { content: ""; width: 34px; height: 26px; border: 1.5px solid currentColor; border-radius: 6px; opacity: .6; }
   .r-4x5 { aspect-ratio: 4 / 5; }
   .r-9x16 { aspect-ratio: 9 / 16; }
-  .r-1x1 { aspect-ratio: 1 / 1; }
-  figcaption.credito {
-    font-size: 12px; color: var(--tinta-suave); padding-top: 8px; border-top: 1px solid var(--fio); margin-top: 8px; font-style: italic; font-family: var(--serif);
-  }
 
-  /* ============ SEÇÕES ============ */
-  section { padding: 72px 0; }
-  .secao-cabeca { text-align: center; margin-bottom: 44px; }
-  .chapeu {
-    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
-    color: var(--vermelho); margin-bottom: 12px;
-  }
-  .secao-cabeca h2 { font-size: clamp(30px, 5vw, 54px); }
-  .secao-cabeca .linha-fina { max-width: 640px; margin: 14px auto 0; color: var(--tinta-suave); font-family: var(--serif); font-style: italic; }
+  /* polaroid frame for the portrait photos */
+  .capa-foto, .sobre-foto { background: var(--branco); padding: 14px 14px 0; border-radius: 6px; box-shadow: var(--sombra); }
+  .capa-foto { transform: rotate(1.6deg); }
+  .sobre-foto { transform: rotate(-1.4deg); }
+  .capa-foto .foto, .sobre-foto .foto { border-radius: 3px; }
+  figcaption.credito { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--tinta-suave); text-align: center; padding: 14px 6px 18px; }
 
-  /* ============ 1. CAPA ============ */
-  .capa { padding-top: calc(var(--topo) + 28px); padding-bottom: 0; }
-  .capa-manchete-topo {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-    font-size: 12px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; padding-bottom: 10px; border-bottom: 1px solid var(--fio); margin-bottom: 26px;
-  }
-  .capa-manchete-topo .exclusivo { background: var(--vermelho); color: #fff; padding: 2px 8px; }
-  .capa-grade { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: start; }
-  .capa h1 {
-    font-size: clamp(46px, 9.5vw, 128px); line-height: .92; letter-spacing: -.01em; word-break: break-word;
-  }
-  .capa h1 .linha2 { color: var(--vermelho); display: block; }
-  .capa-frase {
-    font-family: var(--serif); font-size: clamp(19px, 2.3vw, 26px); line-height: 1.4; margin: 26px 0 30px;
-    padding: 16px 0; border-top: 1px solid var(--fio); border-bottom: 1px solid var(--fio);
-  }
-  .capa-botoes { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
-  .capa-numeros { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--fio); border-bottom: 1px solid var(--fio); }
-  .capa-numeros div { padding: 14px 12px; border-right: 1px solid var(--fio); }
-  .capa-numeros div:last-child { border-right: 0; }
-  .capa-numeros strong { display: block; font-family: var(--serif); font-size: clamp(26px, 3.4vw, 40px); line-height: 1.1; }
-  .capa-numeros span { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--tinta-suave); }
+  /* ============ SECTIONS ============ */
+  section { padding: 96px 0; }
+  .secao-cabeca { text-align: center; margin-bottom: 52px; }
+  .chapeu { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--argila-escura); margin-bottom: 14px; }
+  .chapeu::before { content: ""; width: 22px; border-top: 1px solid currentColor; }
+  .secao-cabeca h2 { font-size: clamp(32px, 4.6vw, 50px); }
+  .secao-cabeca .linha-fina { max-width: 600px; margin: 16px auto 0; color: var(--tinta-suave); font-family: var(--serif); font-style: italic; font-size: 18px; }
 
-  .faixa-marcas {
-    margin-top: 56px; border-top: 3px solid var(--fio); border-bottom: 1px solid var(--fio);
-    overflow: hidden; white-space: nowrap; padding: 10px 0; background: var(--tinta); color: var(--papel);
-  }
-  .faixa-marcas-trilho { display: inline-flex; animation: rolar 38s linear infinite; }
-  .faixa-marcas-trilho span {
-    font-family: var(--serif); text-transform: uppercase; font-size: 15px; letter-spacing: .14em; padding: 0 22px;
-  }
-  .faixa-marcas-trilho span::after { content: "✦"; color: var(--vermelho); margin-left: 44px; font-size: 11px; vertical-align: middle; }
-  @keyframes rolar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* ============ 1. COVER ============ */
+  .capa { padding-top: calc(var(--topo) + 48px); padding-bottom: 104px; }
+  .capa-manchete-topo { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--tinta-suave); margin-bottom: 36px; }
+  .capa-manchete-topo .exclusivo { display: inline-flex; align-items: center; gap: 8px; background: var(--branco); border: 1px solid var(--fio); color: var(--tinta); padding: 6px 14px; border-radius: 999px; }
+  .capa-manchete-topo .exclusivo::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--salvia); }
+  .capa-grade { display: grid; grid-template-columns: 1.3fr 1fr; gap: 72px; align-items: center; }
+  .capa-texto { container-type: inline-size; min-width: 0; }
+  .ola { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--argila-escura); margin: 0 0 10px; }
+  .capa h1 { font-size: clamp(40px, 7vw, 96px); line-height: .98; letter-spacing: -.02em; white-space: nowrap; }
+  @supports (font-size: 1cqi) { .capa h1 { font-size: min(15cqi, 112px); } }
+  .capa h1 .linha2 { display: block; font-style: italic; }
+  .capa-frase { font-family: var(--serif); font-size: clamp(19px, 2.2vw, 24px); line-height: 1.5; margin: 28px 0 32px; max-width: 34ch; }
+  .capa-frase em { color: var(--argila-escura); }
+  .capa-sub { color: var(--tinta-suave); margin: -16px 0 32px; max-width: 46ch; }
+  .capa-botoes { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .capa-aviso { background: var(--branco); border: 1px solid var(--fio); padding: 14px 20px; border-radius: var(--raio); display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .capa-aviso b { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--argila-escura); }
+  .capa-aviso b::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--argila); }
+  .capa-aviso span { font-size: 15px; }
+  .capa-aviso a { font-weight: 600; }
 
-  /* ============ 2. SOBRE ============ */
-  .sobre-grade { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; align-items: start; }
-  .sobre-texto { column-count: 2; column-gap: 36px; column-rule: 1px solid var(--fio); }
-  .sobre-texto p:first-child::first-letter {
-    float: left; font-family: var(--serif); font-weight: 700; font-size: 74px; line-height: .8; padding: 6px 10px 0 0; color: var(--vermelho);
-  }
-  .promessas { list-style: none; margin: 28px 0 0; padding: 0; border-top: 3px solid var(--fio); }
-  .promessas li {
-    display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--fio);
-    font-weight: 600;
-  }
-  .promessas li b { font-family: var(--serif); color: var(--vermelho); font-size: 22px; }
-  .assinatura { margin-top: 26px; font-family: var(--serif); font-style: italic; font-size: 28px; }
-  .assinatura small { display: block; font-family: var(--sans); font-style: normal; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); }
+  /* ============ 2. ABOUT ============ */
+  #sobre { background: var(--aveia); }
+  .sobre-grade { display: grid; grid-template-columns: 1fr 1.6fr; gap: 72px; align-items: start; }
+  .sobre-texto { column-count: 2; column-gap: 40px; }
+  .sobre-texto p:first-child::first-letter { float: left; font-family: var(--serif); font-size: 68px; line-height: .8; padding: 6px 10px 0 0; color: var(--argila-escura); }
+  .promessas { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 10px; }
+  .promessas li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: baseline; padding: 14px 18px; background: var(--branco); border-radius: 12px; font-weight: 500; }
+  .promessas li b { font-family: var(--serif); font-weight: 400; color: var(--argila-escura); font-size: 20px; }
+  .assinatura { margin-top: 28px; font-family: var(--serif); font-style: italic; font-size: 30px; }
+  .assinatura::before { content: "Com carinho,"; display: block; font-size: 16px; color: var(--tinta-suave); margin-bottom: 2px; }
+  .assinatura small { display: block; font-family: var(--sans); font-style: normal; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); margin-top: 4px; }
 
-  /* ============ 3. DESTAQUES ============ */
-  .destaques-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .destaque {
-    display: flex; flex-direction: column; text-decoration: none; color: inherit;
-    border-top: 3px solid var(--fio); padding-top: 14px; transition: transform .2s;
-  }
+  /* ============ 3. WHY UGC WORKS FOR HOTELS ============ */
+  .porque-manchete { max-width: 820px; margin: 0 auto 56px; text-align: center; }
+  .porque-manchete h2 { font-size: clamp(34px, 5.4vw, 60px); line-height: 1.08; }
+  .porque-manchete p { margin: 22px auto 0; max-width: 600px; color: var(--tinta-suave); font-size: 18px; }
+  .porque-grade { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--fio); border-bottom: 1px solid var(--fio); }
+  .porque-item { padding: 36px 32px; }
+  .porque-item + .porque-item { border-left: 1px solid var(--fio); }
+  .porque-num { font-family: var(--serif); font-style: italic; font-size: 36px; line-height: 1; color: var(--argila); }
+  .porque-item h3 { font-size: 23px; margin: 18px 0 10px; }
+  .porque-item p { margin: 0; font-size: 16px; color: var(--tinta-suave); }
+  .citacao { margin: 56px auto 0; max-width: 720px; text-align: center; font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.6vw, 27px); line-height: 1.5; }
+
+  /* ============ 4. HOTEL STAY COLLAB ============ */
+  .hotel { background: var(--aveia); }
+  .hotel-grade { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+  .hotel-intro p { font-family: var(--serif); font-size: 19px; line-height: 1.7; }
+  .hotel-intro .destaque-bilingue { margin-top: 26px; padding: 20px 24px; background: var(--argila-clara); border-radius: var(--raio); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  .hotel-intro .destaque-bilingue strong { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--argila-escura); margin-bottom: 6px; }
+  /* the offer, styled like a handwritten letter card */
+  .proposta { background: var(--branco); border-radius: var(--raio); padding: 32px 32px 22px; box-shadow: var(--sombra); }
+  .proposta-topo { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; border-bottom: 1px dashed #D3C6B5; padding-bottom: 16px; margin-bottom: 4px; }
+  .proposta-topo h3 { font-size: 28px; font-style: italic; }
+  .proposta-topo span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--tinta-suave); }
+  .proposta h4 { font-family: var(--sans); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .14em; color: var(--argila-escura); margin: 22px 0 6px; }
+  .proposta ul { list-style: none; margin: 0; padding: 0; }
+  .proposta li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--fio); }
+  .proposta li:last-child { border-bottom: 0; }
+  .proposta li::before { content: "✦"; color: var(--argila); font-size: 11px; line-height: 2.2; }
+
+  .cidades-cabeca { margin: 72px 0 28px; text-align: center; font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.6vw, 28px); }
+  /* the three cities as postcards, each with a little stamp */
+  .cidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; list-style: none; margin: 0; padding: 0; }
+  .cidade { position: relative; background: var(--branco); border-radius: 6px; padding: 30px 26px 28px; box-shadow: var(--sombra); }
+  .cidade:nth-child(1) { transform: rotate(-1.2deg); }
+  .cidade:nth-child(3) { transform: rotate(1deg); }
+  .cidade::after { content: ""; position: absolute; top: 18px; right: 18px; width: 38px; height: 46px; border: 1.5px dashed #CDBFAE; border-radius: 3px; background: var(--argila-clara); }
+  .cidade:nth-child(2)::after { background: var(--salvia-clara); }
+  .cidade-mes { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--tinta-suave); }
+  .cidade h3 { font-size: clamp(28px, 3vw, 36px); margin: 10px 0 6px; }
+  .cidade-noites { font-family: var(--serif); font-style: italic; color: var(--argila-escura); }
+  .hotel-cta { text-align: center; margin-top: 48px; }
+
+  /* ============ 5. HIGHLIGHTS ============ */
+  .destaques-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .destaque { display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .25s; }
   .destaque:hover { transform: translateY(-4px); }
-  .destaque:hover .play { background: var(--vermelho); }
-  .destaque .foto { margin-bottom: 16px; }
-  .play {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    width: 74px; height: 74px; border-radius: 50%; background: var(--tinta); display: grid; place-items: center;
-    border: 3px solid var(--papel); transition: background .2s;
-  }
-  .play::after { content: ""; border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent #fff; margin-left: 5px; }
-  .destaque .foto-legenda-formato { top: auto; bottom: 14px; }
-  .destaque-numero { font-family: var(--serif); font-weight: 700; font-size: clamp(38px, 4.5vw, 54px); line-height: 1; color: var(--vermelho); }
-  .destaque-rotulo { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 6px 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--fio); }
-  .destaque h3 { font-size: 20px; margin-bottom: 6px; }
+  .destaque .foto { margin-bottom: 18px; border-radius: var(--raio); }
+  .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3; width: 64px; height: 64px; border-radius: 50%; background: rgba(255,253,249,.92); display: grid; place-items: center; box-shadow: var(--sombra); transition: transform .2s; }
+  .destaque:hover .play { transform: translate(-50%, -50%) scale(1.06); }
+  .play::after { content: ""; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent var(--cacau); margin-left: 4px; }
+  .destaque .foto-legenda-formato { top: auto; bottom: 18px; transform: translateX(-50%); }
+  .destaque .foto-legenda-formato::before { display: none; }
+  .video-caixa video { width: 100%; height: 100%; object-fit: cover; display: block; background: var(--linho); }
+  .video-caixa .play { border: 0; cursor: pointer; padding: 0; }
+  .video-caixa .play[hidden] { display: none; }
+  .video-caixa:hover .play { transform: translate(-50%, -50%) scale(1.06); }
+  .destaque-tipo { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--argila-escura); margin-bottom: 6px; }
+  .destaque h3 { font-size: 22px; margin-bottom: 6px; }
   .destaque p { color: var(--tinta-suave); font-size: 15px; margin: 0; }
 
-  /* ============ 4. TRABALHOS ============ */
-  .filtros { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 36px; }
-  .filtro {
-    background: transparent; border: 2px solid var(--tinta); color: var(--tinta); padding: 9px 16px; cursor: pointer;
-    font: 700 13px var(--sans); letter-spacing: .1em; text-transform: uppercase; transition: background .2s, color .2s;
-  }
-  .filtro:hover { background: var(--papel-escuro); }
-  .filtro[aria-pressed="true"] { background: var(--tinta); color: var(--papel); }
+  /* ============ 6. WORK ============ */
+  #trabalhos { background: var(--aveia); }
+  .filtros { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 44px; }
+  .filtro { background: var(--branco); border: 1px solid var(--fio); color: var(--tinta); padding: 9px 20px; cursor: pointer; border-radius: 999px; font: 500 14px var(--sans); transition: background .2s, color .2s, border-color .2s; }
+  .filtro:hover { border-color: var(--tinta-suave); }
+  .filtro[aria-pressed="true"] { background: var(--cacau); border-color: var(--cacau); color: var(--papel); }
   .trabalhos-grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .trabalho { border-top: 1px solid var(--fio); padding-top: 12px; animation: aparecer .4s ease both; }
+  .trabalho { animation: aparecer .4s ease both; }
   .trabalho[hidden] { display: none; }
-  .trabalho .foto { margin-bottom: 12px; }
-  .trabalho-nicho { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--vermelho); }
-  .trabalho h3 { font-size: 17px; margin: 4px 0; }
+  .trabalho .foto { margin-bottom: 14px; background: #E4DACC; }
+  .trabalho-nicho { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--argila-escura); }
+  .trabalho h3 { font-size: 19px; margin: 4px 0; }
   .trabalho p { font-size: 14px; color: var(--tinta-suave); margin: 0; }
   @keyframes aparecer { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
   .trabalhos-vazio { text-align: center; font-style: italic; font-family: var(--serif); }
 
-  /* ============ 5. SERVIÇOS ============ */
-  .servicos-grade { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--fio); }
-  .servico { padding: 28px 26px 30px; border-bottom: 1px solid var(--fio); border-right: 1px solid var(--fio); }
-  .servico:nth-child(3n) { border-right: 0; }
-  .servico-num { font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--vermelho); line-height: 1; }
-  .servico h3 { font-size: 20px; margin: 14px 0 10px; }
-  .servico p { margin: 0; color: var(--tinta-suave); font-size: 15px; }
+  /* ============ 7. SERVICES ============ */
+  .servicos-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .servico { padding: 30px 28px; background: var(--branco); border: 1px solid var(--fio); border-radius: var(--raio); display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+  .servico:hover { border-color: #CDBFAE; transform: translateY(-2px); }
+  .servico-num { font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--argila); line-height: 1; }
+  .servico h3 { font-size: 23px; margin: 16px 0 10px; }
+  .servico p { margin: 0 0 18px; color: var(--tinta-suave); font-size: 15px; }
+  .servico-preco { margin-top: auto; align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); }
 
-  /* ============ 6. NÚMEROS E DEPOIMENTOS ============ */
-  .metricas { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 3px solid var(--fio); border-bottom: 3px solid var(--fio); background: var(--tinta); color: var(--papel); }
-  .metrica { padding: 30px 18px; text-align: center; border-right: 1px solid rgba(239,236,228,.45); }
-  .metrica:last-child { border-right: 0; }
-  .metrica strong { display: block; font-family: var(--serif); font-size: clamp(36px, 5vw, 58px); line-height: 1; }
-  .metrica span { display: block; margin-top: 10px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
-  .subtitulo-secao {
-    font-family: var(--serif); text-transform: uppercase; font-size: 15px; letter-spacing: .16em; text-align: center;
-    margin: 56px 0 24px; display: flex; align-items: center; gap: 16px;
-  }
-  .subtitulo-secao::before, .subtitulo-secao::after { content: ""; flex: 1; border-top: 1px solid var(--fio); }
-  .resultados-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .resultado { border: 2px solid var(--tinta); padding: 24px; background: var(--papel); }
-  .resultado strong { display: block; font-family: var(--serif); font-size: 44px; color: var(--vermelho); line-height: 1; }
-  .resultado .r-rotulo { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; margin: 8px 0 12px; }
-  .resultado p { margin: 0; color: var(--tinta-suave); font-size: 15px; }
-  .depoimentos-grade { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 3px solid var(--fio); }
-  .depoimento { margin: 0; padding: 28px; border-bottom: 1px solid var(--fio); }
-  .depoimento:nth-child(odd) { border-right: 1px solid var(--fio); }
-  .depoimento blockquote { margin: 0 0 14px; font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.55; }
-  .depoimento blockquote::before { content: "“"; color: var(--vermelho); font-size: 48px; line-height: 0; vertical-align: -18px; margin-right: 4px; font-style: normal; }
-  .depoimento figcaption { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-  .depoimento figcaption span { color: var(--tinta-suave); font-weight: 500; }
+  /* ============ 8. WHAT YOU GET ============ */
+  #entregas { padding-top: 24px; }
+  .entregas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 56px; }
+  .entregas li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--fio); }
+  .entregas li::before { content: "✓"; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--salvia-clara); color: var(--salvia); font-size: 13px; font-weight: 700; }
 
-  /* ============ 7. CONTATO ============ */
-  .contato-grade { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
-  .formulario { border-top: 3px solid var(--fio); padding-top: 20px; }
+  /* ============ 9. HOW I WORK (the cozy dark moment) ============ */
+  .como-trabalho { background: var(--cacau); color: #F3ECE2; }
+  .como-trabalho .chapeu { color: #E3B8A5; }
+  .como-trabalho .secao-cabeca h2 { color: #FBF7F1; }
+  .passos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: p; }
+  .passo { padding: 8px 28px 8px; position: relative; }
+  .passo + .passo { border-left: 1px solid rgba(243,236,226,.18); }
+  .passo-num { font-family: var(--serif); font-style: italic; font-size: 40px; line-height: 1; color: #E3B8A5; }
+  .passo h3 { font-size: 22px; margin: 16px 0 8px; color: #FBF7F1; }
+  .passo p { margin: 0; font-size: 15px; color: #D9CEC2; }
+  .como-trabalho :focus-visible { outline-color: #E3B8A5; }
+
+  /* ============ 10. CONTACT ============ */
+  .contato-grade { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: start; }
+  .formulario { background: var(--branco); border-radius: var(--raio); padding: 32px; box-shadow: var(--sombra); }
   .campo { margin-bottom: 18px; }
-  .campo label { display: block; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
-  .campo input, .campo textarea {
-    width: 100%; font: 400 16px var(--sans); color: var(--tinta); background: #f7f5ef;
-    border: 0; border-bottom: 2px solid var(--tinta); padding: 12px; border-radius: 0;
-  }
+  .campo label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; color: var(--tinta-suave); }
+  .campo input, .campo textarea { width: 100%; font: 400 16px var(--sans); color: var(--tinta); background: var(--papel); border: 1px solid var(--fio); padding: 12px 14px; border-radius: var(--raio-p); }
+  .campo input:hover, .campo textarea:hover { border-color: #CDBFAE; }
   .campo textarea { min-height: 140px; resize: vertical; }
-  .campo input:focus-visible, .campo textarea:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 0; }
-  .confirmacao {
-    border: 2px solid var(--tinta); padding: 22px; background: #f7f5ef; margin-top: 4px;
-  }
-  .confirmacao h3 { color: var(--vermelho); font-size: 22px; margin-bottom: 8px; }
-  .canais { border-top: 3px solid var(--fio); padding-top: 20px; }
-  .canais p { font-family: var(--serif); font-style: italic; }
-  .canal {
-    display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--fio);
-    text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: 14px;
-  }
-  .canal span:last-child { font-family: var(--sans); text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--tinta-suave); overflow-wrap: anywhere; text-align: right; }
-  .canal:hover span:first-child { color: var(--vermelho); }
+  .campo input:focus-visible, .campo textarea:focus-visible { outline: 2px solid var(--argila-escura); outline-offset: 0; }
+  .erro { color: var(--argila-escura); font-weight: 600; margin: 0 0 12px; }
+  .erro:empty { display: none; }
+  .confirmacao { background: var(--argila-clara); border-radius: var(--raio); padding: 24px; }
+  .confirmacao h3 { font-size: 24px; margin-bottom: 8px; }
+  .canais { padding-top: 12px; }
+  .canais p { font-family: var(--serif); font-style: italic; font-size: 19px; }
+  .canal { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--fio); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .canal span:last-child { font-weight: 400; color: var(--tinta-suave); overflow-wrap: anywhere; text-align: right; }
+  .canal:hover span:first-child { color: var(--argila-escura); }
 
-  /* ============ 8. RODAPÉ ============ */
-  .rodape { padding: 36px 0 40px; background: var(--tinta); color: var(--papel); }
+  /* ============ FOOTER ============ */
+  .rodape { padding: 44px 0; background: var(--aveia); border-top: 1px solid var(--fio); }
   .rodape-grade { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px; }
-  .rodape .marca-nome { color: var(--papel); }
-  .rodape-redes { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; margin: 0; padding: 0; }
-  .rodape-redes a { text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-  .rodape-redes a:hover { color: #ff8a7d; }
-  .rodape small { font-size: 13px; opacity: .85; }
-  .rodape :focus-visible { outline-color: #ff8a7d; }
+  .rodape-redes { display: flex; flex-wrap: wrap; gap: 22px; list-style: none; margin: 0; padding: 0; }
+  .rodape-redes a { text-decoration: none; font-size: 14px; font-weight: 500; }
+  .rodape-redes a:hover { color: var(--argila-escura); }
+  .rodape small { font-size: 13px; color: var(--tinta-suave); }
 
-  /* ============ CARD DE CAPTURA ============ */
-  .captura-fundo {
-    position: fixed; inset: 0; z-index: 200; background: rgba(17,17,17,.72);
-    display: grid; place-items: center; padding: 16px; opacity: 0; transition: opacity .3s;
-  }
+  /* ============ MEDIA KIT CARD ============ */
+  .captura-fundo { position: fixed; inset: 0; z-index: 200; background: rgba(47,39,34,.5); display: grid; place-items: center; padding: 16px; opacity: 0; transition: opacity .3s; }
   .captura-fundo.aberto { opacity: 1; }
   .captura-fundo[hidden] { display: none; }
-  .captura {
-    position: relative; width: 100%; max-width: 440px; background: var(--papel); border: 3px solid var(--tinta);
-    padding: 32px 26px 26px; box-shadow: 10px 10px 0 var(--vermelho); max-height: calc(100vh - 32px); overflow-y: auto;
-  }
+  .captura { position: relative; width: 100%; max-width: 440px; background: var(--papel); border-radius: 20px; padding: 36px 28px 28px; max-height: calc(100vh - 32px); overflow-y: auto; box-shadow: var(--sombra); }
   .captura .chapeu { margin-bottom: 6px; }
-  .captura h2 { font-size: 26px; margin-bottom: 10px; }
-  .captura > p { color: var(--tinta-suave); font-size: 15px; }
-  .captura-fechar {
-    position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; background: none; border: 0; cursor: pointer;
-    font-size: 28px; line-height: 1; color: var(--tinta);
-  }
-  .captura-fechar:hover { color: var(--vermelho); }
+  .captura h2 { font-size: 28px; margin-bottom: 10px; }
+  .captura > p, .captura #captura-conteudo > p { color: var(--tinta-suave); font-size: 15px; }
+  .captura-fechar { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; background: none; border: 0; border-radius: 50%; cursor: pointer; font-size: 26px; line-height: 1; color: var(--tinta-suave); }
+  .captura-fechar:hover { background: var(--aveia); color: var(--tinta); }
   .captura .botao { width: 100%; }
 
-  /* ============ ANIMAÇÃO DE ENTRADA ============ */
-  .revelar { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-  .revelar.visivel { opacity: 1; transform: none; }
+  /* ============ SCROLL REVEAL ============ */
+  .revelar { opacity: 0; translate: 0 24px; transition: opacity .7s ease, translate .7s ease; }
+  .revelar.visivel { opacity: 1; translate: 0 0; }
 
-  /* ============ RESPONSIVO ============ */
+  /* ============ RESPONSIVE ============ */
   @media (max-width: 1020px) {
-    .menu a { padding: 6px 7px; font-size: 12px; letter-spacing: .06em; }
+    .menu a { padding: 6px 8px; font-size: 13px; }
     .trabalhos-grade { grid-template-columns: repeat(3, 1fr); }
+    .capa-grade { gap: 48px; }
   }
   @media (max-width: 880px) {
-    :root { --topo: 96px; }
+    :root { --topo: 92px; }
     .botao-menu { display: inline-flex; }
-    .menu {
-      display: none; position: absolute; left: 0; right: 0; top: 100%;
-      flex-direction: column; gap: 0; background: var(--papel); border-top: 1px solid var(--fio); border-bottom: 3px solid var(--fio);
-      padding: 6px 20px 14px;
-    }
+    .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; background: var(--papel); border-top: 1px solid var(--fio); border-bottom: 1px solid var(--fio); padding: 6px 24px 16px; }
     .menu.aberto { display: flex; }
-    .menu a { padding: 14px 4px; font-size: 15px; border-bottom: 1px solid rgba(17,17,17,.2); }
+    .menu a { padding: 14px 4px; font-size: 16px; border-radius: 0; border-bottom: 1px solid var(--fio); }
+    .menu a:hover { background: none; }
+    .menu a.idioma { margin: 12px 0 0; text-align: center; border-radius: 999px; }
     .topo-nav { position: relative; }
-    .capa-grade, .sobre-grade, .contato-grade { grid-template-columns: 1fr; gap: 32px; }
-    .capa-foto { max-width: 420px; }
-    .sobre-foto { max-width: 420px; }
-    .destaques-grade { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 44px; }
+    .capa-grade, .sobre-grade, .contato-grade, .hotel-grade { grid-template-columns: 1fr; gap: 44px; }
+    .capa-foto, .sobre-foto { max-width: 360px; margin: 0 auto !important; width: 100%; }
+    .destaques-grade { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; gap: 48px; }
+    .porque-grade { grid-template-columns: 1fr; }
+    .porque-item + .porque-item { border-left: 0; border-top: 1px solid var(--fio); }
+    .porque-item { padding: 28px 4px; }
     .servicos-grade { grid-template-columns: repeat(2, 1fr); }
-    .servico:nth-child(3n) { border-right: 1px solid var(--fio); }
-    .servico:nth-child(2n) { border-right: 0; }
-    .metricas { grid-template-columns: repeat(2, 1fr); }
-    .metrica:nth-child(2) { border-right: 0; }
-    .metrica:nth-child(-n+2) { border-bottom: 1px solid rgba(239,236,228,.45); }
-    .resultados-grade { grid-template-columns: 1fr; }
     .trabalhos-grade { grid-template-columns: repeat(2, 1fr); }
+    .passos { grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
+    .passo:nth-child(3) { border-left: 0; }
+    .entregas { grid-template-columns: 1fr; }
+    .cidades { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   }
   @media (max-width: 600px) {
     body { font-size: 16px; }
-    section { padding: 56px 0; }
+    section { padding: 72px 0; }
     .container { padding: 0 16px; }
     .topo-edicao span.esconde-celular { display: none; }
-    .marca-nome { font-size: 18px; }
+    .marca-nome { font-size: 19px; }
     .sobre-texto { column-count: 1; }
-    .capa-numeros div { padding: 12px 8px; }
-    .capa-numeros span { font-size: 10px; letter-spacing: .06em; }
-    .capa-botoes .botao { flex: 1 1 100%; }
+    .capa-botoes .botao, .hotel-cta .botao { flex: 1 1 100%; width: 100%; }
     .servicos-grade { grid-template-columns: 1fr; }
-    .servico { border-right: 0 !important; }
-    .depoimentos-grade { grid-template-columns: 1fr; }
-    .depoimento:nth-child(odd) { border-right: 0; }
-    .depoimento { padding: 24px 0; }
+    .proposta { padding: 26px 20px 16px; }
+    .formulario { padding: 24px 18px; }
+    .passos { grid-template-columns: 1fr; }
+    .passo { padding: 0 4px; }
+    .passo + .passo { border-left: 0; border-top: 1px solid rgba(243,236,226,.18); padding-top: 28px; }
     .trabalhos-grade { gap: 16px; }
-    .trabalho h3 { font-size: 15px; }
+    .trabalho h3 { font-size: 16px; }
   }
   @media (max-width: 380px) {
     .trabalhos-grade { grid-template-columns: 1fr; }
   }
 
-  /* ============ MOVIMENTO REDUZIDO ============ */
+  /* ============ REDUCED MOTION ============ */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    .revelar { opacity: 1; transform: none; }
-    .faixa-marcas { white-space: normal; }
-    .faixa-marcas-trilho { flex-wrap: wrap; justify-content: center; display: flex; }
-    .faixa-marcas-trilho span[aria-hidden="true"] { display: none; }
+    .revelar { opacity: 1; translate: none; }
   }
+
+  /* ============ IDENTITY COLOURS ============
+     Sage, blush, butter and clay live in backgrounds, cards and details.
+     Photo and video slots stay neutral so the content brings its own colour. */
+  :root {
+    --sal: #A8BBA3;  --sal-escura: #4E6B57; --sal-escurissima: #3F5847; --sal-lavada: #E4ECE1;
+    --blush: #E9C9BC; --blush-lavado: #F6E8E1;
+    --butter: #EFDFB3; --butter-lavado: #FAF2DC;
+    --argila: #B8705A; --argila-escura: #9A5743;
+    --papel: #FAF6EF; --tinta: #2E2A26; --tinta-suave: #6B635A;
+  }
+  h1 em, h2 em { color: var(--sal-escura); }
+  .marca-nome em, .capa h1 .linha2 { color: var(--sal-escura); }
+  .topo-edicao span:last-child { color: var(--sal-escura); }
+  .menu a:hover { background: var(--sal-lavada); }
+  .chapeu { color: var(--argila-escura); }
+
+  /* buttons: sage-deep is the one clickable colour */
+  .botao-primario { background: var(--sal-escura); color: var(--papel); }
+  .botao-primario:hover { background: var(--sal-escurissima); }
+  .botao-secundario { border-color: var(--sal); }
+  .botao-secundario:hover { background: var(--sal-lavada); border-color: var(--sal-escura); }
+  .filtro[aria-pressed="true"] { background: var(--sal-escura); border-color: var(--sal-escura); }
+
+  /* cover */
+  .capa { background: linear-gradient(var(--papel), var(--papel)); }
+  .capa-manchete-topo .exclusivo { background: var(--sal-lavada); border-color: var(--sal); color: var(--sal-escurissima); }
+  .capa-manchete-topo .exclusivo::before { background: var(--sal-escura); }
+  .capa-aviso { background: var(--butter); border-color: var(--butter); }
+  .capa-aviso b { color: var(--tinta); }
+  .capa-aviso b::before { background: var(--argila); }
+  .capa-aviso a { color: var(--sal-escurissima); }
+
+  /* about on a blush wash */
+  #sobre { background: var(--blush-lavado); }
+  .promessas li b, .sobre-texto p:first-child::first-letter { color: var(--argila); }
+
+  /* why UGC: the three ideas in full sage, blush and butter */
+  .porque-grade { gap: 20px; border: 0; }
+  .porque-item { border-radius: 16px; padding: 34px 30px; }
+  .porque-item + .porque-item { border: 0; }
+  .porque-item:nth-child(1) { background: var(--sal); }
+  .porque-item:nth-child(2) { background: var(--blush); }
+  .porque-item:nth-child(3) { background: var(--butter); }
+  .porque-num { color: var(--tinta); opacity: .75; }
+  .porque-item p { color: var(--tinta); }
+
+  /* hotel collab on a sage wash */
+  .hotel { background: var(--sal-lavada); }
+  .hotel-intro .destaque-bilingue { background: var(--butter); }
+  .hotel-intro .destaque-bilingue strong { color: var(--tinta); }
+  .proposta h4 { color: var(--sal-escura); }
+  .proposta li::before { color: var(--argila); }
+  .cidade { border-top: 8px solid var(--sal); }
+  .cidade:nth-child(2) { border-top-color: var(--blush); }
+  .cidade:nth-child(3) { border-top-color: var(--butter); }
+  .cidade::after { background: var(--blush-lavado); border-color: var(--argila); }
+  .cidade:nth-child(2)::after { background: var(--sal-lavada); border-color: var(--sal-escura); }
+  .cidade:nth-child(3)::after { background: var(--blush); }
+  .cidade-noites { color: var(--sal-escura); }
+
+  /* highlights: neutral slots, play button in sage */
+  .play { background: var(--sal-escura); }
+  .play::after { border-left-color: var(--papel); }
+  .destaque-tipo { color: var(--sal-escura); }
+
+  /* work on a butter wash */
+  #trabalhos { background: var(--butter-lavado); }
+  .trabalho-nicho { color: var(--sal-escura); }
+
+  /* services: each card with its own soft colour */
+  .servico { border: 0; }
+  .servico:nth-child(3n+1) { background: var(--sal-lavada); }
+  .servico:nth-child(3n+2) { background: var(--blush-lavado); }
+  .servico:nth-child(3n+3) { background: var(--butter-lavado); }
+  .servico-preco { background: var(--papel); padding: 5px 12px; border-radius: 999px; color: var(--tinta); }
+  .entregas li::before { background: var(--sal); color: var(--tinta); }
+
+  /* how I work: full sage with cream cards */
+  .como-trabalho { background: var(--sal); color: var(--tinta); }
+  .como-trabalho .chapeu { color: var(--tinta); }
+  .como-trabalho .secao-cabeca h2 { color: var(--tinta); }
+  .passos { gap: 16px; }
+  .passo, .passo + .passo { background: var(--papel); border: 0 !important; border-radius: 16px; padding: 26px 24px !important; }
+  .passo-num { color: var(--argila); }
+  .passo h3 { color: var(--tinta); }
+  .passo p { color: var(--tinta-suave); }
+  .como-trabalho :focus-visible { outline-color: var(--tinta); }
+
+  /* contact on a blush wash */
+  #contato { background: var(--blush-lavado); }
+  .formulario { box-shadow: none; }
+  .canal:hover span:first-child { color: var(--sal-escura); }
+  .confirmacao { background: var(--sal-lavada); }
+
+  /* footer in sage-deep */
+  .rodape { background: var(--sal-escura); color: var(--papel); border: 0; }
+  .rodape small { color: #DDE6D8; }
+  .rodape-redes a:hover { color: var(--butter); }
+  .rodape :focus-visible { outline-color: var(--butter); }
+
+  /* ============ NAV: each item wrapped in one palette colour ============ */
+  .menu { gap: 8px; }
+  .menu a { padding: 7px 16px; font-weight: 600; transition: filter .2s, transform .15s; }
+  .menu li:nth-child(4n+1) a { background: #9A5743; color: #FAF6EF; }
+  .menu li:nth-child(4n+2) a { background: #4E6B57; color: #FAF6EF; }
+  .menu li:nth-child(4n+3) a { background: #E0A48F; color: #2E2A26; }
+  .menu li:nth-child(4n+4) a { background: #A9C2A7; color: #2E2A26; }
+  .menu li a:hover { background-color: inherit; filter: brightness(.92); transform: translateY(-1px); }
+  .menu li:nth-child(4n+1) a:hover { background: #9A5743; }
+  .menu li:nth-child(4n+2) a:hover { background: #4E6B57; }
+  .menu li:nth-child(4n+3) a:hover { background: #E0A48F; }
+  .menu li:nth-child(4n+4) a:hover { background: #A9C2A7; }
+  .menu li a.idioma, .menu li a.idioma:hover { background: transparent; color: #2E2A26; border: 1px solid #2E2A26; margin-left: 4px; }
+  .menu li a.idioma:hover { background: #2E2A26; color: #FAF6EF; }
+
+  /* second name in terracotta / wine */
+  .capa h1 .linha2, .marca-nome em { color: #9A5743; }
+
+  /* leaner content */
+  .capa-frase { margin-bottom: 12px; }
+  .capa-sub { margin: 0 0 32px; font-size: 18px; }
+  .sobre-texto { column-count: 1; font-size: 19px; max-width: 46ch; }
+  .sobre-texto p:first-child::first-letter { float: none; font-size: inherit; padding: 0; line-height: inherit; color: inherit; }
+  .sobre-grade { align-items: center; }
+  .porque-manchete { margin-bottom: 44px; }
+  .porque-item p { font-size: 17px; }
+  .servicos-grade { grid-template-columns: repeat(4, 1fr); }
+  .hotel-intro .destaque-bilingue { font-size: 16px; }
+  @media (max-width: 1020px) { .menu { gap: 6px; } .menu a { padding: 6px 11px; } }
+  @media (max-width: 880px) {
+    .menu { gap: 8px; padding: 12px 24px 18px; }
+    .menu a { padding: 12px 18px; border-bottom: 0; border-radius: 999px; text-align: center; }
+    .menu li a.idioma { margin: 4px 0 0; }
+    .servicos-grade { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) { .servicos-grade { grid-template-columns: 1fr; } .sobre-texto { font-size: 17px; } }
+
+  /* what future guests will see */
+  .hotel-intro .hotel-oferece { font-size: 18px; padding: 20px 24px; background: #F6E8E1; border-radius: 16px; margin: 22px 0; }
+  .hotel-intro .hotel-oferece em { color: #9A5743; }
+  .cidade-noites { font-family: var(--serif); font-style: normal; font-size: 20px; color: #9A5743; }
+  /* ============ SNAPSHOTS (small photo strip) ============ */
+  #fotos { padding-top: 24px; }
+  .fotos-grade { list-style: none; margin: 0 auto; padding: 0; max-width: 960px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .foto-polaroid { background: var(--branco); padding: 10px 10px 0; border-radius: 6px; box-shadow: var(--sombra); transition: transform .25s; }
+  .foto-polaroid:nth-child(odd) { transform: rotate(-1.2deg); }
+  .foto-polaroid:nth-child(even) { transform: rotate(1deg); }
+  .foto-polaroid:hover { transform: rotate(0) translateY(-3px); }
+  .foto-polaroid .foto { border-radius: 3px; }
+  .foto-polaroid p { margin: 0; padding: 10px 4px 12px; text-align: center; font-family: var(--serif); font-style: italic; font-size: 14px; line-height: 1.4; color: var(--tinta-suave); }
+  .foto-polaroid p:empty { padding: 5px 0; }
+  .fotos-grade .foto-polaroid:nth-child(n+5) { margin-top: 4px; }
+  @media (max-width: 880px) { .fotos-grade { grid-template-columns: repeat(2, 1fr); max-width: 480px; gap: 18px; } }
 </style>
 </head>
 <body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-<!-- ============ CABEÇALHO DE JORNAL + MENU FIXO ============ -->
+<!-- ============ CABEÇALHO + MENU FIXO ============ -->
 <header class="topo">
   <div class="container">
     <div class="topo-edicao">
-      <span>Edição diária · Ano I nº 001 · Limeira</span>
-      <span class="esconde-celular">Caderno UGC</span>
+      <span>Creator UGC · Limeira, Brasil</span>
+      <span class="esconde-celular">Marcas · Hospedagens · PT / EN</span>
     </div>
   </div>
   <hr class="filete-duplo">
   <div class="container">
     <nav class="topo-nav" aria-label="Menu principal">
-      <a class="marca-nome" href="#capa">Laura <em>Alcantara</em></a>
+      <a class="marca-nome" href="#capa">Laura <em>Alcântara</em></a>
       <button class="botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
         <span class="barras" aria-hidden="true"></span> Menu
       </button>
       <ul class="menu" id="menu-principal">
         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#porque">Por que UGC</a></li>
         <li><a href="#destaques">Destaques</a></li>
         <li><a href="#trabalhos">Trabalhos</a></li>
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#numeros">Números</a></li>
+        <li><a href="#hotel">Hospedagens</a></li>
         <li><a href="#contato">Contato</a></li>
+        <!-- link para a versão em inglês -->
+        <li><a class="idioma" href="https://lauragalc.github.io/lauragalcugc-en/" hreflang="en" lang="en" aria-label="View in English">EN</a></li>
       </ul>
     </nav>
   </div>
@@ -417,33 +541,29 @@
   <section class="capa" id="capa" aria-labelledby="titulo-capa">
     <div class="container">
       <div class="capa-manchete-topo">
-        <span class="exclusivo">Exclusivo</span>
-        <span>Creator UGC · Beleza · Comida · Casa e decoração · Viagem</span>
+        <span class="exclusivo">Aberta para parcerias</span>
+        <span>Creator UGC · PT / EN</span>
       </div>
       <div class="capa-grade">
-        <div>
-          <h1 id="titulo-capa">Laura <span class="linha2">Alcantara</span></h1>
-          <p class="capa-frase">Dando vida a marcas com um olhar humano. Crio vídeos e fotos que parecem conversa de amiga e vendem como anúncio.</p>
+        <div class="capa-texto">
+          <p class="ola">Oi, eu sou a</p>
+          <h1 id="titulo-capa">Laura <span class="linha2">Alcântara</span></h1>
+          <p class="capa-frase">Experiências reais viram <em>clientes reais</em>.</p>
+          <p class="capa-sub">Vídeos e fotos UGC para marcas e hospedagens, em português e inglês.</p>
           <div class="capa-botoes">
             <a class="botao botao-primario" href="#contato">Falar comigo</a>
             <a class="botao botao-secundario" href="#destaques">Ver os trabalhos</a>
           </div>
-          <!-- os três números da capa vêm do array NUMEROS_CAPA no script -->
-          <div class="capa-numeros" id="capa-numeros"></div>
+          <p class="capa-aviso">
+            <b>Agenda aberta</b>
+            <span>Parcerias com marcas e hospedagens. <a href="#servicos">Ver como posso ajudar</a></span>
+          </p>
         </div>
         <figure class="capa-foto revelar" style="margin:0">
-          <!-- FOTO DA CAPA: para usar a sua foto, troque o div abaixo por
-               <div class="foto r-4x5"><img src="sua-foto.jpg" alt="Laura Alcantara sorrindo para a câmera"></div> -->
-          <div class="foto r-4x5" role="img" aria-label="Espaço para a foto da creator Laura Alcantara">
-            <span class="foto-legenda-formato">foto da creator 4:5</span>
-          </div>
-          <figcaption class="credito">Laura Alcantara, creator UGC, em Limeira.</figcaption>
+          <div class="foto r-4x5"><img src="https://lauragalc.github.io/lauragalcugc-en/foto-laura.jpg" alt="Laura Alcântara sorrindo, de óculos, na frente de folhagens verdes" style="object-position: 50% 30%"></div>
+          <figcaption class="credito">Oi, direto de Limeira</figcaption>
         </figure>
       </div>
-    </div>
-    <!-- faixa com os nomes das marcas: edite o array MARCAS no script -->
-    <div class="faixa-marcas" aria-label="Marcas com quem já trabalhei">
-      <div class="faixa-marcas-trilho" id="faixa-marcas"></div>
     </div>
   </section>
 
@@ -453,30 +573,24 @@
   <section id="sobre" aria-labelledby="titulo-sobre">
     <div class="container">
       <header class="secao-cabeca revelar">
-        <span class="chapeu">Perfil</span>
-        <h2 id="titulo-sobre">Quem assina esta edição</h2>
+        <span class="chapeu">Sobre</span>
+        <h2 id="titulo-sobre">Um pouco <em>sobre mim</em></h2>
       </header>
       <div class="sobre-grade">
         <figure class="sobre-foto revelar" style="margin:0">
           <!-- FOTO DO SOBRE: troque o div por
-               <div class="foto r-4x5"><img src="sua-foto-2.jpg" alt="Laura Alcantara gravando um vídeo"></div> -->
-          <div class="foto r-4x5" role="img" aria-label="Espaço para a foto de Laura Alcantara gravando conteúdo">
+               <div class="foto r-4x5"><img src="sua-foto-2.jpg" alt="Laura Alcântara gravando um vídeo"></div> -->
+          <div class="foto r-4x5" role="img" aria-label="Espaço para uma foto de Laura Alcântara criando conteúdo">
             <span class="foto-legenda-formato">foto da creator 4:5</span>
           </div>
           <figcaption class="credito">Bastidores de uma gravação.</figcaption>
         </figure>
         <div class="revelar">
           <div class="sobre-texto">
-            <p>Oi, eu sou a Laura! Moro em Limeira e passo os meus dias transformando produtos em histórias que as pessoas querem assistir até o fim. Acredito que o melhor conteúdo é aquele que parece real, porque é real: gente de verdade usando, sentindo e contando o que achou.</p>
-            <p>Trabalho com beleza, comida, casa e decoração e viagem, e já criei conteúdo para hotéis que queriam mostrar a experiência de quem se hospeda. Meu jeito é simples: entendo a sua marca, escrevo um roteiro com cara de gente e gravo com cuidado em cada detalhe.</p>
-            <p>Se você quer conteúdo que aproxima a sua marca das pessoas, a gente vai se dar muito bem.</p>
+            <p>Oi, eu sou a Laura! Psicóloga clínica e apaixonada por experimentar coisas novas.</p>
+            <p>Juntei esse amor por testar, descobrir e criar memórias com o olhar de quem entende de gente, e foi assim que nasceu o meu trabalho com UGC.</p>
           </div>
-          <ul class="promessas">
-            <li><b>01</b> Roteiro aprovado por você antes de eu gravar.</li>
-            <li><b>02</b> Uma rodada de ajuste inclusa em cada entrega.</li>
-            <li><b>03</b> Entrega em até 72 horas úteis.</li>
-          </ul>
-          <p class="assinatura">Laura Alcantara <small>Creator UGC · Limeira</small></p>
+          <p class="assinatura">Laura Alcântara <small>Creator UGC · PT / EN</small></p>
         </div>
       </div>
     </div>
@@ -484,29 +598,54 @@
 
   <hr class="filete-duplo">
 
-  <!-- ============ 3. CONTEÚDOS DE DESTAQUE ============ -->
+  <!-- ============ 3. POR QUE UGC FUNCIONA ============ -->
+  <section class="porque" id="porque" aria-labelledby="titulo-porque">
+    <div class="container">
+      <header class="porque-manchete revelar">
+        <span class="chapeu">Por que funciona</span>
+        <h2 id="titulo-porque">Experiências reais viram <em>clientes reais.</em></h2>
+      </header>
+      <!-- os três cards vêm do array PORQUE no script -->
+      <ul class="porque-grade" id="porque-grade"></ul>
+    </div>
+  </section>
+
+  <hr class="filete-duplo">
+
+  <!-- ============ 4. DESTAQUES ============ -->
   <section id="destaques" aria-labelledby="titulo-destaques">
     <div class="container">
       <header class="secao-cabeca revelar">
-        <span class="chapeu">Em destaque</span>
-        <h2 id="titulo-destaques">As manchetes da semana</h2>
-        <p class="linha-fina">Toque em um vídeo para assistir no Instagram.</p>
+        <span class="chapeu">Destaques</span>
+        <h2 id="titulo-destaques">Meus <em>favoritos</em></h2>
       </header>
-      <!-- os cards são montados pelo array DESTAQUES no script:
-           o LINK DO VÍDEO entra no campo "link" e a CAPA entra no campo "capa" -->
+      <!-- os cards vêm do array DESTAQUES no script -->
       <div class="destaques-grade" id="destaques-grade"></div>
     </div>
   </section>
 
   <hr class="filete-duplo">
 
-  <!-- ============ 4. TRABALHOS POR NICHO ============ -->
+  <!-- ============ FOTOS ============ -->
+  <section id="fotos" aria-labelledby="titulo-fotos">
+    <div class="container">
+      <header class="secao-cabeca revelar">
+        <span class="chapeu">Fotos</span>
+        <h2 id="titulo-fotos">Alguns <em>momentos</em></h2>
+      </header>
+      <!-- as fotos vêm do array FOTOS no script -->
+      <ul class="fotos-grade revelar" id="fotos-grade"></ul>
+    </div>
+  </section>
+
+  <hr class="filete-duplo">
+
+  <!-- ============ 5. TRABALHOS POR NICHO ============ -->
   <section id="trabalhos" aria-labelledby="titulo-trabalhos">
     <div class="container">
       <header class="secao-cabeca revelar">
-        <span class="chapeu">Classificados</span>
+        <span class="chapeu">Portfólio</span>
         <h2 id="titulo-trabalhos">Trabalhos por nicho</h2>
-        <p class="linha-fina">Escolha um nicho para ver só os trabalhos dele.</p>
       </header>
       <div class="filtros" id="filtros" role="group" aria-label="Filtrar trabalhos por nicho"></div>
       <div class="trabalhos-grade" id="trabalhos-grade" aria-live="polite"></div>
@@ -515,13 +654,12 @@
 
   <hr class="filete-duplo">
 
-  <!-- ============ 5. COMO EU TE AJUDO ============ -->
+  <!-- ============ 6. SERVIÇOS ============ -->
   <section id="servicos" aria-labelledby="titulo-servicos">
     <div class="container">
       <header class="secao-cabeca revelar">
         <span class="chapeu">Serviços</span>
         <h2 id="titulo-servicos">Como eu te ajudo</h2>
-        <p class="linha-fina">Do roteiro à entrega, tudo pensado para a sua marca vender com naturalidade.</p>
       </header>
       <div class="servicos-grade revelar" id="servicos-grade"></div>
     </div>
@@ -529,32 +667,62 @@
 
   <hr class="filete-duplo">
 
-  <!-- ============ 6. NÚMEROS E DEPOIMENTOS ============ -->
-  <section id="numeros" aria-labelledby="titulo-numeros">
+  <!-- ============ 7. HOSPEDAGENS (sem data definida) ============ -->
+  <section class="hotel" id="hotel" aria-labelledby="titulo-hotel">
     <div class="container">
       <header class="secao-cabeca revelar">
-        <span class="chapeu">Balanço</span>
-        <h2 id="titulo-numeros">Números e depoimentos</h2>
+        <span class="chapeu">Hotéis &amp; pousadas</span>
+        <h2 id="titulo-hotel">A <em>parceria de estadia</em></h2>
+        <p class="linha-fina">Me hospede por algumas noites e receba conteúdo que faz as pessoas reservarem.</p>
       </header>
-      <div class="metricas revelar" id="metricas"></div>
+      <div class="hotel-grade">
+        <div class="hotel-intro revelar">
+          <p>Mostro o seu espaço do jeito que o hóspede vive de verdade: a chegada, o quarto, os pequenos detalhes.</p>
+          <p class="hotel-oferece">Os futuros hóspedes vão conhecer tudo o que você oferece: <em>o café da manhã, o serviço de quarto, a piscina, a vista, os cantinhos aconchegantes</em> que fazem o seu lugar especial.</p>
+          <div class="destaque-bilingue">
+            <strong>Dois públicos, uma estadia</strong>
+            Cada conteúdo em português e em inglês.
+          </div>
+        </div>
+        <!-- os itens deste quadro vêm do array HOTEL_TROCA no script -->
+        <article class="proposta revelar" aria-labelledby="titulo-proposta">
+          <div class="proposta-topo">
+            <h3 id="titulo-proposta">A parceria</h3>
+            <span>UGC em troca de estadia</span>
+          </div>
+          <h4>Você oferece</h4>
+          <ul id="hotel-oferta"></ul>
+          <h4>Você recebe</h4>
+          <ul id="hotel-recebe"></ul>
+        </article>
+      </div>
+      <div class="hotel-cta">
+        <a class="botao botao-primario" href="#contato">Me convide para o seu espaço</a>
+      </div>
+    </div>
+  </section>
 
-      <h3 class="subtitulo-secao">Resultados de campanha</h3>
-      <div class="resultados-grade" id="resultados-grade"></div>
-
-      <h3 class="subtitulo-secao">O que dizem as marcas</h3>
-      <div class="depoimentos-grade" id="depoimentos-grade"></div>
+  <!-- ============ 8. COMO EU TRABALHO ============ -->
+  <section class="como-trabalho" id="como-trabalho" aria-labelledby="titulo-como">
+    <div class="container">
+      <header class="secao-cabeca revelar">
+        <span class="chapeu">Passo a passo</span>
+        <h2 id="titulo-como">Como eu trabalho</h2>
+      </header>
+      <!-- os passos vêm do array PASSOS no script -->
+      <ol class="passos revelar" id="passos"></ol>
     </div>
   </section>
 
   <hr class="filete-duplo">
 
-  <!-- ============ 7. BORA CRIAR JUNTOS ============ -->
+  <!-- ============ 9. CONTATO ============ -->
   <section id="contato" aria-labelledby="titulo-contato">
     <div class="container">
       <header class="secao-cabeca revelar">
-        <span class="chapeu">Cartas à redação</span>
+        <span class="chapeu">Diga oi</span>
         <h2 id="titulo-contato">Bora criar juntos?</h2>
-        <p class="linha-fina">Me conta da sua marca e do que você precisa. Respondo rapidinho.</p>
+        <p class="linha-fina">Marcas: me contem do que precisam. Hospedagens: me contem onde fica o seu espaço.</p>
       </header>
       <div class="contato-grade">
         <div class="formulario revelar">
@@ -571,7 +739,7 @@
               <label for="c-msg">Mensagem</label>
               <textarea id="c-msg" name="mensagem" required></textarea>
             </div>
-            <p class="erro-form" id="erro-contato" role="alert" style="color:var(--vermelho);font-weight:600;margin:0 0 12px"></p>
+            <p class="erro" id="erro-contato" role="alert"></p>
             <button class="botao botao-primario" type="submit">Enviar mensagem</button>
           </form>
           <div class="confirmacao" id="confirmacao-contato" hidden tabindex="-1">
@@ -580,7 +748,6 @@
           </div>
         </div>
         <aside class="canais revelar" aria-label="Outros canais de contato">
-          <p>Prefere falar direto? Escolha o canal:</p>
           <a class="canal" href="https://wa.me/5519983362423" target="_blank" rel="noopener"><span>WhatsApp</span><span>(19) 98336-2423</span></a>
           <a class="canal" href="mailto:lauragalc@gmail.com"><span>E-mail</span><span>lauragalc@gmail.com</span></a>
           <a class="canal" href="https://www.instagram.com/eusoualau/" target="_blank" rel="noopener"><span>Instagram</span><span>@eusoualau</span></a>
@@ -591,30 +758,29 @@
 
 </main>
 
-<!-- ============ 8. RODAPÉ ============ -->
+<!-- ============ RODAPÉ ============ -->
 <hr class="filete-duplo">
 <footer class="rodape">
   <div class="container rodape-grade">
-    <a class="marca-nome" href="#capa">Laura Alcantara</a>
+    <a class="marca-nome" href="#capa">Laura Alcântara</a>
     <ul class="rodape-redes">
       <li><a href="https://www.instagram.com/eusoualau/" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://wa.me/5519983362423" target="_blank" rel="noopener">WhatsApp</a></li>
       <li><a href="mailto:lauragalc@gmail.com">E-mail</a></li>
-      <!-- TIKTOK: troque @seuusuario pelo seu usuário, ou apague esta linha -->
-      <li><a href="https://www.tiktok.com/@seuusuario" target="_blank" rel="noopener">TikTok</a></li>
+      <li><a href="https://lauragalc.github.io/lauragalcugc-en/" hreflang="en" lang="en">English version</a></li>
     </ul>
-    <small>© <span id="ano"></span> Laura Alcantara · Limeira</small>
+    <small>© <span id="ano"></span> Laura Alcântara</small>
   </div>
 </footer>
 
-<!-- ============ CARD DE CAPTURA (mídia kit) ============ -->
+<!-- ============ CARD DO MÍDIA KIT ============ -->
 <div class="captura-fundo" id="captura-fundo" hidden>
   <div class="captura" role="dialog" aria-modal="true" aria-labelledby="captura-titulo">
     <button class="captura-fechar" type="button" aria-label="Fechar">×</button>
     <div id="captura-conteudo">
-      <span class="chapeu">Edição extra</span>
+      <span class="chapeu">Mídia kit</span>
       <h2 id="captura-titulo">Quer meu mídia kit completo?</h2>
-      <p>Deixe seu nome e e-mail e eu te mando tudo: formatos, valores e resultados.</p>
+      <p>Deixe seu e-mail e eu te mando formatos e pacotes.</p>
       <form id="form-captura" novalidate>
         <div class="campo">
           <label for="k-nome">Nome</label>
@@ -624,7 +790,7 @@
           <label for="k-email">E-mail</label>
           <input id="k-email" name="email" type="email" autocomplete="email" required>
         </div>
-        <p id="erro-captura" role="alert" style="color:var(--vermelho);font-weight:600;margin:0 0 12px"></p>
+        <p class="erro" id="erro-captura" role="alert"></p>
         <button class="botao botao-primario" type="submit">Quero receber</button>
       </form>
     </div>
@@ -634,57 +800,76 @@
 <script>
 /* =====================================================================
    DADOS DO PORTFÓLIO: edite só aqui, sem mexer no HTML.
-   Onde aparece "00" ou "Marca 01", é placeholder para você trocar.
+   As fotos e vídeos vêm do repositório da versão em inglês (MIDIA).
    ===================================================================== */
+const MIDIA = "https://lauragalc.github.io/lauragalcugc-en/";
 
-// Números da capa. "valor" vazio ("") mostra "00" até você preencher.
-const NUMEROS_CAPA = [
-  { valor: "", rotulo: "vídeos entregues" },   // ex.: "120"
-  { valor: "", rotulo: "marcas atendidas" },   // ex.: "15"
-  { valor: "", rotulo: "views somadas" }        // ex.: "1,2M"
+// Parceria com hospedagens: o que o espaço oferece e o que recebe
+const HOTEL_TROCA = {
+  oferta: [
+    "Uma estadia para 2 pessoas, em data combinada com você"
+  ],
+  recebe: [
+    "4 vídeos verticais: 3 curtos + 1 longo",
+    "Fotos do seu espaço sendo aproveitado",
+    "A estadia do começo ao fim: a chegada, os momentos, a saída",
+    "Versões em português e em inglês",
+    "Direito de uso sem prazo"
+  ]
+};
+
+// Por que UGC funciona
+const PORQUE = [
+  { titulo: "Gente confia em gente", texto: "Uma pessoa real parece dica de amiga, não anúncio." },
+  { titulo: "Ver dá vontade", texto: "Quem assiste já se imagina usando o seu produto." },
+  { titulo: "Conteúdo que continua trabalhando", texto: "Seu para usar no site, nas redes e nos anúncios, sem prazo." }
 ];
 
-// Marcas da faixa da capa
-const MARCAS = [
-  "Hotéis", "Marca 02", "Marca 03", "Marca 04", "Marca 05", "Marca 06",
-  "Marca 07", "Marca 08", "Marca 09", "Marca 10", "Marca 11", "Marca 12"
-];
-
-// Conteúdos de destaque.
-// "link": cole aqui o LINK DO VÍDEO (Reels, TikTok, YouTube...).
-// "capa": caminho da CAPA vertical 9:16 (ex.: "capa-1.jpg"). Vazio mostra o bloco com degradê.
+// Destaques: "video" toca direto na página; "capa" é a imagem antes do play.
 const DESTAQUES = [
   {
+    link: "https://www.instagram.com/reel/DfNdnGkKS_c/",
+    video: MIDIA + "video-bruges.mp4",
+    capa: MIDIA + "capa-bruges.jpg",
+    tipo: "Experiência",
+    titulo: "Momentos em Bruges",
+    contexto: "Um passeio pela cidade e as comidinhas do caminho."
+  },
+  {
+    link: "https://www.instagram.com/reel/CpTZyjFvDrI/",
+    video: MIDIA + "video-estadia-curta.mp4",
+    capa: MIDIA + "capa-estadia-curta.jpg",
+    tipo: "Vídeo curto de estadia",
+    titulo: "Uma estadia em momentos",
+    contexto: "Pequenos momentos, cantinhos aconchegantes e, acima de tudo, o lugar sendo aproveitado."
+  },
+  {
     link: "https://www.instagram.com/reel/DdE2t0HB4fW/",
-    capa: "",
-    numero: "1.000",
-    rotulo: "views no reels",
-    titulo: "Conteúdo de destaque 01",          // troque pelo título do vídeo
-    contexto: "Escreva aqui uma linha sobre a marca e o objetivo."
-  },
-  {
-    link: "https://www.instagram.com/reel/DcoMxowR5GA/",
-    capa: "",
-    numero: "2.500",
-    rotulo: "views no reels",
-    titulo: "Conteúdo de destaque 02",
-    contexto: "Escreva aqui uma linha sobre a marca e o objetivo."
-  },
-  {
-    link: "#",                                    // cole o link do terceiro vídeo
-    capa: "",
-    numero: "0.000",
-    rotulo: "views no reels",
-    titulo: "Conteúdo de destaque 03",
-    contexto: "Escreva aqui uma linha sobre a marca e o objetivo."
+    video: MIDIA + "video-estadia-completa.mp4",
+    capa: MIDIA + "capa-estadia-completa.jpg",
+    tipo: "Vídeo completo de estadia",
+    titulo: "Uma estadia do começo ao fim",
+    contexto: "Um olhar mais completo sobre um dos lugares onde ficamos."
   }
 ];
 
-// Nichos dos filtros (o primeiro botão "Todos" é criado sozinho)
-const NICHOS = ["Beleza", "Comida", "Casa e decoração", "Viagem"];
+// Fotos: 4 por linha no computador, 2 no celular. "legenda" pode ficar vazia.
+const FOTOS = [
+  { arquivo: MIDIA + "photo-1.jpg", legenda: "", alt: "Suíte em chalé com cisnes de toalha na cama e porta de vidro para o bosque" },
+  { arquivo: MIDIA + "photo-2.jpg", legenda: "", alt: "Quarto aconchegante com paredes de pedra, luz quente e poltrona de pelego" },
+  { arquivo: MIDIA + "photo-3.jpg", legenda: "", alt: "Bandeja na banheira com vinho tinto, vinho branco e uma vela" },
+  { arquivo: MIDIA + "photo-4.jpg", legenda: "", alt: "Cantinho de parede de pedra com luminária quente e almofadas brancas" },
+  { arquivo: MIDIA + "photo-5.jpg", legenda: "", alt: "Barca de sashimi no gelo com salmão, atum e polvo" },
+  { arquivo: MIDIA + "photo-6.jpg", legenda: "", alt: "Petit gâteau com sorvete de baunilha" },
+  { arquivo: MIDIA + "photo-7.jpg", legenda: "", alt: "Sushi de salmão maçaricado em prato de cerâmica azul" },
+  { arquivo: MIDIA + "photo-8.jpg", legenda: "", alt: "Mesa cheia de potinhos de geleia caseira" }
+];
+
+// Nichos dos filtros (o botão "Todos" é criado sozinho)
+const NICHOS = ["Beleza", "Comida", "Casa e decoração", "Hospedagens"];
 
 // Trabalhos da galeria. "nicho" precisa ser igual a um nome da lista NICHOS.
-// "imagem": caminho da foto (ex.: "trabalho-1.jpg"). Vazio mostra o bloco com degradê.
+// "imagem": caminho da foto (ex.: "trabalho-1.jpg"). Vazio mostra o bloco neutro.
 const TRABALHOS = [
   { nicho: "Beleza", titulo: "Rotina de skincare", marca: "Marca 01", formato: "Vídeo UGC 9:16", imagem: "" },
   { nicho: "Beleza", titulo: "Antes e depois de maquiagem", marca: "Marca 02", formato: "Corte para anúncio", imagem: "" },
@@ -692,41 +877,25 @@ const TRABALHOS = [
   { nicho: "Comida", titulo: "Prova de sabor sincera", marca: "Marca 04", formato: "Fotos do produto", imagem: "" },
   { nicho: "Casa e decoração", titulo: "Cantinho transformado", marca: "Marca 05", formato: "Vídeo UGC 9:16", imagem: "" },
   { nicho: "Casa e decoração", titulo: "Unboxing de decoração", marca: "Marca 06", formato: "Unboxing", imagem: "" },
-  { nicho: "Viagem", titulo: "Tour pelo quarto do hotel", marca: "Hotéis", formato: "Vídeo UGC 9:16", imagem: "" },
-  { nicho: "Viagem", titulo: "Um dia de hospedagem", marca: "Hotéis", formato: "Publicação no perfil", imagem: "" }
+  { nicho: "Hospedagens", titulo: "Tour pelo quarto", marca: "Hospedagens", formato: "Vídeo UGC 9:16", imagem: "" },
+  { nicho: "Hospedagens", titulo: "Um dia de estadia", marca: "Hospedagens", formato: "Publicação no perfil", imagem: "" }
 ];
 
-// Serviços (o número é colocado sozinho, na ordem)
+// Serviços (numerados sozinhos, na ordem)
 const SERVICOS = [
-  { titulo: "Vídeo UGC", descricao: "Vídeos verticais com roteiro, gravação e edição, prontos para as redes da sua marca." },
-  { titulo: "Corte para anúncio", descricao: "Versões curtas com gancho forte nos primeiros segundos, feitas para tráfego pago." },
-  { titulo: "Fotos do produto", descricao: "Fotos naturais do produto em uso, com luz bonita e cara de vida real." },
-  { titulo: "Unboxing", descricao: "A primeira impressão de verdade: abrir, mostrar os detalhes e contar o que achei." },
-  { titulo: "Publicação no meu perfil", descricao: "O conteúdo vai ao ar no @eusoualau, falando direto com a minha audiência." },
-  { titulo: "Pacote mensal", descricao: "Conteúdo todo mês com valor fechado, para a sua marca nunca ficar sem novidade." }
+  { titulo: "Vídeos UGC", descricao: "Vídeos verticais com roteiro, gravação e edição." },
+  { titulo: "Cortes para anúncio", descricao: "Versões curtas com gancho forte para tráfego pago." },
+  { titulo: "Fotos", descricao: "Fotos naturais, com cara de vida real, do seu produto ou espaço." },
+  { titulo: "Pacote mensal", descricao: "Conteúdo novo todo mês." }
 ];
+const PRECO_SERVICOS = "Valores sob consulta";
 
-// Métricas com contador. "valor" numérico anima; null mostra "00" até você preencher.
-const METRICAS = [
-  { valor: null, sufixo: "", rotulo: "vídeos entregues" },
-  { valor: null, sufixo: "", rotulo: "marcas atendidas" },
-  { valor: null, sufixo: "", rotulo: "views somadas" },
-  { valor: 4, sufixo: "", rotulo: "nichos atendidos" }
-];
-
-// Resultados de campanha (placeholders para você preencher)
-const RESULTADOS = [
-  { numero: "+00%", rotulo: "Resultado da campanha 01", texto: "Marca 01 · descreva aqui o que a campanha alcançou." },
-  { numero: "+00%", rotulo: "Resultado da campanha 02", texto: "Marca 02 · descreva aqui o que a campanha alcançou." },
-  { numero: "+00%", rotulo: "Resultado da campanha 03", texto: "Marca 03 · descreva aqui o que a campanha alcançou." }
-];
-
-// Depoimentos
-const DEPOIMENTOS = [
-  { texto: "Espaço para o depoimento do cliente: uma ou duas frases sobre como foi trabalhar com a Laura.", nome: "Cliente 01", empresa: "Marca 01" },
-  { texto: "Espaço para o depoimento do cliente: uma ou duas frases sobre como foi trabalhar com a Laura.", nome: "Cliente 02", empresa: "Marca 02" },
-  { texto: "Espaço para o depoimento do cliente: uma ou duas frases sobre como foi trabalhar com a Laura.", nome: "Cliente 03", empresa: "Marca 03" },
-  { texto: "Espaço para o depoimento do cliente: uma ou duas frases sobre como foi trabalhar com a Laura.", nome: "Cliente 04", empresa: "Marca 04" }
+// Como eu trabalho
+const PASSOS = [
+  { titulo: "Briefing", texto: "Você me conta do que precisa." },
+  { titulo: "Roteiro", texto: "Você aprova antes de eu gravar." },
+  { titulo: "Gravação e edição", texto: "Em português e em inglês." },
+  { titulo: "Entrega", texto: "Em até 72 horas úteis, com um ajuste incluso." }
 ];
 
 /* =====================================================================
@@ -735,8 +904,8 @@ const DEPOIMENTOS = [
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = (s) => document.querySelector(s);
 const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const lista = (itens) => itens.map((i) => `<li>${esc(i)}</li>`).join("");
 
-// bloco de foto: imagem real se houver caminho, senão degradê com legenda do formato
 function blocoFoto(caminho, proporcao, legenda, alt, extra) {
   const dentro = caminho
     ? `<img src="${esc(caminho)}" alt="${esc(alt)}" loading="lazy">`
@@ -745,29 +914,56 @@ function blocoFoto(caminho, proporcao, legenda, alt, extra) {
   return `<div class="foto ${proporcao}"${papel}>${dentro}${extra || ""}</div>`;
 }
 
-// Capa: números
-$("#capa-numeros").innerHTML = NUMEROS_CAPA.map((n) =>
-  `<div><strong>${esc(n.valor || "00")}</strong><span>${esc(n.rotulo)}</span></div>`).join("");
+$("#porque-grade").innerHTML = PORQUE.map((p, i) => `
+  <li class="porque-item revelar">
+    <span class="porque-num">${String(i + 1).padStart(2, "0")}</span>
+    <h3>${esc(p.titulo)}</h3>
+    <p>${esc(p.texto)}</p>
+  </li>`).join("");
 
-// Capa: faixa de marcas (repetida para o rolamento contínuo)
-const itensMarcas = MARCAS.map((m) => `<span>${esc(m)}</span>`).join("");
-$("#faixa-marcas").innerHTML = itensMarcas + MARCAS.map((m) => `<span aria-hidden="true">${esc(m)}</span>`).join("");
+$("#hotel-oferta").innerHTML = lista(HOTEL_TROCA.oferta);
+$("#hotel-recebe").innerHTML = lista(HOTEL_TROCA.recebe);
 
-// Destaques
-$("#destaques-grade").innerHTML = DESTAQUES.map((d, i) => `
+$("#destaques-grade").innerHTML = DESTAQUES.map((d) => d.video ? `
+  <article class="destaque revelar">
+    <div class="foto r-9x16 video-caixa">
+      <video src="${esc(d.video)}" poster="${esc(d.capa)}" preload="none" playsinline aria-label="${esc(d.titulo)}"></video>
+      <button class="play" type="button" aria-label="Assistir: ${esc(d.titulo)}"></button>
+    </div>
+    <span class="destaque-tipo">${esc(d.tipo)}</span>
+    <h3>${esc(d.titulo)}</h3>
+    <p>${esc(d.contexto)}</p>
+  </article>` : `
   <a class="destaque revelar" href="${esc(d.link)}" ${d.link !== "#" ? 'target="_blank" rel="noopener"' : ""}
-     aria-label="Assistir: ${esc(d.titulo)}, ${esc(d.numero)} ${esc(d.rotulo)}">
+     aria-label="Assistir: ${esc(d.titulo)}, ${esc(d.tipo)}">
     ${blocoFoto(d.capa, "r-9x16", "capa do vídeo 9:16", "Capa do vídeo " + d.titulo, '<span class="play" aria-hidden="true"></span>')}
-    <span class="destaque-numero">+${esc(d.numero)}</span>
-    <span class="destaque-rotulo">${esc(d.rotulo)}</span>
+    <span class="destaque-tipo">${esc(d.tipo)}</span>
     <h3>${esc(d.titulo)}</h3>
     <p>${esc(d.contexto)}</p>
   </a>`).join("");
 
-// Trabalhos + filtros
+document.querySelectorAll(".video-caixa").forEach((caixa) => {
+  const v = caixa.querySelector("video"), b = caixa.querySelector(".play");
+  b.addEventListener("click", () => {
+    document.querySelectorAll(".video-caixa video").forEach((o) => { if (o !== v) o.pause(); });
+    v.controls = true; b.hidden = true; v.play();
+  });
+  v.addEventListener("play", () => {
+    b.hidden = true;
+    document.querySelectorAll(".video-caixa video").forEach((o) => { if (o !== v) o.pause(); });
+  });
+});
+
+$("#fotos-grade").innerHTML = FOTOS.map((f) => `
+  <li class="foto-polaroid">
+    ${blocoFoto(f.arquivo, "r-4x5", "foto 4:5", f.alt)}
+    <p>${esc(f.legenda)}</p>
+  </li>`).join("");
+
 const filtrosEl = $("#filtros");
 const gradeTrab = $("#trabalhos-grade");
-filtrosEl.innerHTML = ["Todos", ...NICHOS].map((n, i) =>
+const TODOS = "Todos";
+filtrosEl.innerHTML = [TODOS, ...NICHOS].map((n, i) =>
   `<button class="filtro" type="button" data-nicho="${esc(n)}" aria-pressed="${i === 0}">${esc(n)}</button>`).join("");
 gradeTrab.innerHTML = TRABALHOS.map((t) => `
   <article class="trabalho" data-nicho="${esc(t.nicho)}">
@@ -775,7 +971,7 @@ gradeTrab.innerHTML = TRABALHOS.map((t) => `
     <span class="trabalho-nicho">${esc(t.nicho)}</span>
     <h3>${esc(t.titulo)}</h3>
     <p>${esc(t.marca)} · ${esc(t.formato)}</p>
-  </article>`).join("") + `<p class="trabalhos-vazio" hidden>Em breve, novos trabalhos neste nicho.</p>`;
+  </article>`).join("") + `<p class="trabalhos-vazio" hidden>Novos trabalhos neste nicho em breve.</p>`;
 
 filtrosEl.addEventListener("click", (e) => {
   const botao = e.target.closest(".filtro");
@@ -784,7 +980,7 @@ filtrosEl.addEventListener("click", (e) => {
   filtrosEl.querySelectorAll(".filtro").forEach((b) => b.setAttribute("aria-pressed", b === botao));
   let visiveis = 0;
   gradeTrab.querySelectorAll(".trabalho").forEach((card) => {
-    const mostra = nicho === "Todos" || card.dataset.nicho === nicho;
+    const mostra = nicho === TODOS || card.dataset.nicho === nicho;
     card.hidden = !mostra;
     if (mostra) {
       visiveis++;
@@ -794,40 +990,23 @@ filtrosEl.addEventListener("click", (e) => {
   gradeTrab.querySelector(".trabalhos-vazio").hidden = visiveis > 0;
 });
 
-// Serviços
 $("#servicos-grade").innerHTML = SERVICOS.map((s, i) => `
   <article class="servico">
     <span class="servico-num">${String(i + 1).padStart(2, "0")}</span>
     <h3>${esc(s.titulo)}</h3>
     <p>${esc(s.descricao)}</p>
+    <span class="servico-preco">${esc(PRECO_SERVICOS)}</span>
   </article>`).join("");
 
-// Métricas
-$("#metricas").innerHTML = METRICAS.map((m) => `
-  <div class="metrica">
-    <strong ${typeof m.valor === "number" ? `data-alvo="${m.valor}" data-sufixo="${esc(m.sufixo)}"` : ""}>${typeof m.valor === "number" ? "0" + esc(m.sufixo) : "00"}</strong>
-    <span>${esc(m.rotulo)}</span>
-  </div>`).join("");
+$("#passos").innerHTML = PASSOS.map((p, i) => `
+  <li class="passo">
+    <span class="passo-num">${i + 1}</span>
+    <h3>${esc(p.titulo)}</h3>
+    <p>${esc(p.texto)}</p>
+  </li>`).join("");
 
-// Resultados
-$("#resultados-grade").innerHTML = RESULTADOS.map((r) => `
-  <article class="resultado revelar">
-    <strong>${esc(r.numero)}</strong>
-    <p class="r-rotulo">${esc(r.rotulo)}</p>
-    <p>${esc(r.texto)}</p>
-  </article>`).join("");
-
-// Depoimentos
-$("#depoimentos-grade").innerHTML = DEPOIMENTOS.map((d) => `
-  <figure class="depoimento revelar">
-    <blockquote>${esc(d.texto)}</blockquote>
-    <figcaption>${esc(d.nome)} <span>· ${esc(d.empresa)}</span></figcaption>
-  </figure>`).join("");
-
-// Ano automático
 $("#ano").textContent = new Date().getFullYear();
 
-// Menu sanduíche
 const botaoMenu = $(".botao-menu");
 const menu = $("#menu-principal");
 botaoMenu.addEventListener("click", () => {
@@ -839,25 +1018,7 @@ menu.addEventListener("click", (e) => {
   if (e.target.closest("a")) { botaoMenu.setAttribute("aria-expanded", "false"); menu.classList.remove("aberto"); }
 });
 
-// Animação de entrada e contadores
-function animarContador(el) {
-  const alvo = Number(el.dataset.alvo);
-  const sufixo = el.dataset.sufixo || "";
-  const fmt = (n) => n.toLocaleString("pt-BR") + sufixo;
-  if (reduzMovimento) { el.textContent = fmt(alvo); return; }
-  const duracao = 1600;
-  const inicio = performance.now();
-  function passo(agora) {
-    const p = Math.min((agora - inicio) / duracao, 1);
-    const suave = 1 - Math.pow(1 - p, 3);
-    el.textContent = fmt(Math.round(alvo * suave));
-    if (p < 1) requestAnimationFrame(passo);
-  }
-  requestAnimationFrame(passo);
-}
-
 const revelaveis = document.querySelectorAll(".revelar");
-const contadores = document.querySelectorAll("[data-alvo]");
 if ("IntersectionObserver" in window && !reduzMovimento) {
   const obs = new IntersectionObserver((entradas) => {
     entradas.forEach((en) => {
@@ -867,30 +1028,18 @@ if ("IntersectionObserver" in window && !reduzMovimento) {
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   revelaveis.forEach((el) => obs.observe(el));
-
-  const obsNum = new IntersectionObserver((entradas) => {
-    entradas.forEach((en) => {
-      if (!en.isIntersecting) return;
-      animarContador(en.target);
-      obsNum.unobserve(en.target);
-    });
-  }, { threshold: 0.5 });
-  contadores.forEach((el) => obsNum.observe(el));
 } else {
   revelaveis.forEach((el) => el.classList.add("visivel"));
-  contadores.forEach(animarContador);
 }
 
-// Validação simples
 const emailValido = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
-// Formulário de contato: confirma na própria tela, sem recarregar
 $("#form-contato").addEventListener("submit", (e) => {
   e.preventDefault();
   const f = e.target;
   const erro = $("#erro-contato");
   if (!f.nome.value.trim() || !emailValido(f.email.value.trim()) || !f.mensagem.value.trim()) {
-    erro.textContent = "Preencha nome, um e-mail válido e a mensagem.";
+    erro.textContent = "Preencha seu nome, um e-mail válido e a mensagem.";
     return;
   }
   erro.textContent = "";
@@ -900,14 +1049,11 @@ $("#form-contato").addEventListener("submit", (e) => {
   conf.focus();
 });
 
-// Card de captura: aparece uma vez por visita, depois de 7 segundos
 const fundo = $("#captura-fundo");
 let focoAnterior = null;
 const CHAVE_CAPTURA = "midiaKitMostrado";
-
 function jaMostrou() { try { return sessionStorage.getItem(CHAVE_CAPTURA) === "1"; } catch (err) { return false; } }
 function marcarMostrado() { try { sessionStorage.setItem(CHAVE_CAPTURA, "1"); } catch (err) {} }
-
 function abrirCaptura() {
   focoAnterior = document.activeElement;
   fundo.hidden = false;
@@ -925,7 +1071,6 @@ function fecharCaptura() {
 function teclasCaptura(e) {
   if (e.key === "Escape") { fecharCaptura(); return; }
   if (e.key === "Tab") {
-    // mantém o foco dentro do card
     const focaveis = fundo.querySelectorAll("button, input, [tabindex]:not([tabindex='-1'])");
     const visiveis = Array.from(focaveis).filter((el) => el.offsetParent !== null);
     const primeiro = visiveis[0], ultimo = visiveis[visiveis.length - 1];
@@ -945,7 +1090,7 @@ $("#form-captura").addEventListener("submit", (e) => {
   $("#captura-conteudo").innerHTML = `
     <span class="chapeu">Tudo certo</span>
     <h2 id="captura-titulo" tabindex="-1">Obrigada, ${esc(f.nome.value.trim().split(" ")[0])}!</h2>
-    <p>Meu mídia kit completo vai chegar no seu e-mail em breve.</p>
+    <p>Meu mídia kit completo chega no seu e-mail em breve.</p>
     <button class="botao botao-secundario" type="button" id="captura-ok">Fechar</button>`;
   $("#captura-ok").addEventListener("click", fecharCaptura);
   $("#captura-ok").focus();
