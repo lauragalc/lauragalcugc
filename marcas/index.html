@@ -604,6 +604,47 @@
     .destaques-grade { grid-template-columns: 1fr; max-width: 280px; }
     .destaque p { display: block; }
   }
+
+  /* ============ AJUSTES: capa maior, vídeos largos, sobre ============ */
+  .capa { padding-top: calc(var(--topo) + 28px); padding-bottom: 72px; }
+  .capa-manchete-topo { margin-bottom: 28px; }
+  .capa-grade { grid-template-columns: 1.35fr 1fr; gap: 56px; }
+  .capa h1 { font-size: clamp(48px, 8vw, 112px); }
+  @supports (font-size: 1cqi) { .capa h1 { font-size: min(14.5cqi, 116px); } }
+  .ola { font-size: 22px; margin-bottom: 8px; }
+  .capa-frase { font-size: clamp(20px, 2.2vw, 28px); margin: 24px 0 10px; max-width: 40ch; }
+  .capa-sub { font-size: 19px; margin-bottom: 32px; }
+  .capa-botoes { margin-bottom: 30px; }
+  .capa .botao { padding: 15px 30px; font-size: 16px; }
+  .capa-aviso { padding: 16px 22px; }
+  .capa-aviso span { font-size: 16px; }
+  .capa-foto { max-width: 400px; justify-self: end; padding: 14px 14px 0; }
+  .capa-foto figcaption.credito { font-size: 16px; padding: 12px 6px 16px; }
+
+  .posts { max-width: 1060px; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+
+  .destaques-grade { max-width: 1100px; gap: 36px; }
+  .destaque .foto.video-caixa { aspect-ratio: 3 / 4; }
+  .destaque h3 { font-size: 20px; }
+  .destaque p { font-size: 14px; }
+
+  .sobre-grade { grid-template-columns: 380px 1fr; max-width: 1000px; gap: 64px; align-items: center; }
+  .sobre-foto { max-width: 380px; padding: 14px 14px 0; }
+  .sobre-cabeca { margin-bottom: 20px; }
+  .sobre-cabeca h2 { font-size: clamp(30px, 3.4vw, 44px); }
+  .sobre-texto { font-size: 17px; }
+
+  @media (max-width: 880px) {
+    .capa-foto { max-width: 300px; justify-self: center; }
+    .posts { grid-template-columns: repeat(3, 1fr); max-width: 520px; }
+    .destaques-grade { grid-template-columns: repeat(3, 1fr); max-width: 600px; gap: 14px; }
+    .sobre-grade { grid-template-columns: 1fr; }
+    .sobre-foto { max-width: 280px; margin: 0 auto; }
+    .sobre-cabeca { text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .destaques-grade { grid-template-columns: 1fr; max-width: 300px; }
+  }
 </style>
 </head>
 <body>
@@ -718,10 +759,6 @@
   <!-- ============ 7. SOBRE MIM ============ -->
   <section id="sobre" aria-labelledby="titulo-sobre">
     <div class="container">
-      <header class="secao-cabeca revelar">
-        <span class="chapeu">Sobre</span>
-        <h2 id="titulo-sobre">Um pouco <em>sobre mim</em></h2>
-      </header>
       <div class="sobre-grade">
         <figure class="sobre-foto revelar" style="margin:0">
           <!-- FOTO DO SOBRE: troque o div por
@@ -730,6 +767,10 @@
           <figcaption class="credito">Sempre de olho no detalhe.</figcaption>
         </figure>
         <div class="revelar">
+          <header class="sobre-cabeca">
+            <span class="chapeu">Sobre</span>
+            <h2 id="titulo-sobre">Um pouco <em>sobre mim</em></h2>
+          </header>
           <div class="sobre-texto">
             <p>Oi, eu sou a Laura! Tenho 27 anos e moro no interior de São Paulo.</p>
             <p>Além de criar conteúdo, sou psicóloga clínica. Por isso penso sempre em quem está do outro lado da tela: o que faz a pessoa confiar, se identificar e chamar.</p>
@@ -832,18 +873,20 @@ const SITES = [
   { nome: "Dr. Agnaldo Alcântara", tipo: "Consultório médico", descricao: "Neurocirurgião em Limeira, com agendamento fácil.", link: "https://lauragalc.github.io/dragnaldoalcantara/", video: "site-agnaldo.mp4", print: "site-agnaldo.jpg" }
 ];
 
-// Fotos e posts (5 por linha no computador, 2 no celular).
+// Fotos e posts (6 por linha no computador, 3 no celular).
 // "imagem": arquivo na pasta marcas (ou MIDIA + arquivo do site em inglês). "link" é opcional.
 const POSTS = [
   { imagem: "post-fono.jpg", alt: "Post de carrossel da Clínica Zelo: 5 sinais de que a fala precisa de atenção", link: "" },
-  { imagem: "post-terapias.jpg", alt: "Post da Clínica Zelo com a fachada: as terapias conversam entre si", link: "" },
-  { imagem: "post-psicopedagogo.jpg", alt: "Post da Clínica Zelo de Dia do Psicopedagogo", link: "" },
   { imagem: MIDIA + "photo-5.jpg", alt: "Barca de sashimi no gelo com salmão, atum e polvo", link: "" },
   { imagem: MIDIA + "photo-1.jpg", alt: "Suíte em chalé com cisnes de toalha na cama e porta de vidro para o bosque", link: "" },
+  { imagem: "post-terapias.jpg", alt: "Post da Clínica Zelo com a fachada: as terapias conversam entre si", link: "" },
   { imagem: MIDIA + "photo-6.jpg", alt: "Petit gâteau com sorvete de baunilha", link: "" },
+  { imagem: MIDIA + "photo-4.jpg", alt: "Cantinho de parede de pedra com luminária quente e almofadas brancas", link: "" },
   { imagem: MIDIA + "photo-2.jpg", alt: "Quarto aconchegante com paredes de pedra, luz quente e poltrona de pelego", link: "" },
   { imagem: MIDIA + "photo-7.jpg", alt: "Sushi de salmão maçaricado em prato de cerâmica azul", link: "" },
+  { imagem: "post-psicopedagogo.jpg", alt: "Post da Clínica Zelo de Dia do Psicopedagogo", link: "" },
   { imagem: MIDIA + "photo-3.jpg", alt: "Bandeja na banheira com vinho tinto, vinho branco e uma vela", link: "" },
+  { imagem: MIDIA + "foto-laura.jpg", alt: "Laura Alcântara sorrindo, de óculos, na frente de folhagens verdes", link: "" },
   { imagem: MIDIA + "photo-8.jpg", alt: "Mesa cheia de potinhos de geleia caseira", link: "" }
 ];
 
