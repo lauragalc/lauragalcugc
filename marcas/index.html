@@ -530,6 +530,78 @@
     .sites-grade { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
     .perfis { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   }
+
+  /* ============ COMPACTO: cada parte cabe numa tela ============ */
+  section { padding: 44px 0; }
+  .secao-cabeca { margin-bottom: 22px; }
+  .chapeu { margin-bottom: 8px; }
+  .secao-cabeca h2 { font-size: clamp(28px, 3.2vw, 40px); }
+  .secao-cabeca .linha-fina { margin-top: 8px; font-size: 16px; }
+
+  .capa { padding-top: calc(var(--topo) + 16px); padding-bottom: 40px; }
+  .capa-manchete-topo { margin-bottom: 20px; }
+  .capa-grade { grid-template-columns: 1.6fr 1fr; gap: 48px; }
+  .capa h1 { font-size: clamp(40px, 6vw, 76px); }
+  @supports (font-size: 1cqi) { .capa h1 { font-size: min(11cqi, 76px); } }
+  .ola { font-size: 18px; margin-bottom: 4px; }
+  .capa-frase { font-size: clamp(18px, 1.8vw, 21px); margin: 18px 0 6px; }
+  .capa-sub { font-size: 16px; margin-bottom: 22px; }
+  .capa-botoes { margin-bottom: 20px; }
+  .botao { padding: 12px 24px; font-size: 14px; }
+  .capa-aviso { padding: 10px 16px; }
+  .capa-aviso span { font-size: 14px; }
+  .capa-foto { max-width: 250px; justify-self: center; padding: 10px 10px 0; }
+  .capa-foto figcaption.credito, .sobre-foto figcaption.credito { font-size: 13px; padding: 8px 4px 12px; }
+
+  .servicos-grade { gap: 16px; }
+  .servico { padding: 22px 20px; }
+  .servico-num { font-size: 24px; }
+  .servico h3 { font-size: 19px; margin: 10px 0 6px; }
+  .servico p { font-size: 14px; line-height: 1.55; margin-bottom: 14px; }
+  .servico-preco { font-size: 10px; }
+
+  .sites-grade { max-width: 700px; margin: 0 auto; gap: 24px; }
+  .site { padding: 10px 10px 16px; }
+  .site .foto { margin-bottom: 12px; }
+  .site h3 { font-size: 19px; margin-bottom: 4px; }
+  .site p { font-size: 14px; margin-bottom: 8px; }
+
+  .posts { max-width: 740px; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .post { padding: 6px; }
+
+  .destaques-grade { max-width: 540px; margin: 0 auto; gap: 22px; }
+  .destaque .foto { margin-bottom: 10px; }
+  .play { width: 48px; height: 48px; }
+  .destaque h3 { font-size: 17px; margin-bottom: 2px; }
+  .destaque p { font-size: 13px; line-height: 1.5; }
+  .destaque-tipo { font-size: 10px; margin-bottom: 2px; }
+
+  .sobre-grade { grid-template-columns: 260px 1fr; max-width: 860px; margin: 0 auto; gap: 56px; }
+  .sobre-foto { max-width: 260px; padding: 10px 10px 0; }
+  .sobre-texto { font-size: 16px; max-width: 52ch; }
+  .sobre-texto p { margin-bottom: .8em; }
+  .assinatura { font-size: 24px; margin-top: 14px; }
+
+  .passo h3 { font-size: 19px; margin: 8px 0 4px; }
+  .passo-num { font-size: 30px; }
+  .formulario { padding: 24px; }
+  .campo { margin-bottom: 12px; }
+  .campo textarea { min-height: 80px; }
+  .canal { padding: 12px 0; }
+
+  @media (max-width: 880px) {
+    .capa-grade, .sobre-grade { grid-template-columns: 1fr; gap: 32px; }
+    .capa-foto { max-width: 240px; }
+    .sobre-foto { max-width: 220px; }
+    .posts { grid-template-columns: repeat(2, 1fr); max-width: 420px; }
+    .destaques-grade { grid-template-columns: repeat(3, 1fr); max-width: 520px; gap: 12px; }
+    .destaque p { display: none; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 48px 0; }
+    .destaques-grade { grid-template-columns: 1fr; max-width: 280px; }
+    .destaque p { display: block; }
+  }
 </style>
 </head>
 <body>
@@ -553,7 +625,7 @@
       <ul class="menu" id="menu-principal">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#sites">Sites</a></li>
-        <li><a href="#instagram">Posts</a></li>
+        <li><a href="#instagram">Fotos</a></li>
         <li><a href="#destaques">Conteúdo</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -621,8 +693,8 @@
   <section id="instagram" aria-labelledby="titulo-instagram">
     <div class="container">
       <header class="secao-cabeca revelar">
-        <span class="chapeu">Instagram</span>
-        <h2 id="titulo-instagram">Posts que <em>eu faço</em></h2>
+        <span class="chapeu">Fotos e posts</span>
+        <h2 id="titulo-instagram">Alguns <em>cliques</em></h2>
       </header>
       <!-- os posts vêm do array POSTS no script -->
       <ul class="posts revelar" id="posts"></ul>
@@ -652,17 +724,16 @@
         <figure class="sobre-foto revelar" style="margin:0">
           <!-- FOTO DO SOBRE: troque o div por
                <div class="foto r-4x5"><img src="sua-foto-2.jpg" alt="Laura Alcântara trabalhando"></div> -->
-          <div class="foto r-4x5" role="img" aria-label="Espaço para uma foto de Laura Alcântara trabalhando">
-            <span class="foto-legenda-formato">foto da Laura 4:5</span>
-          </div>
-          <figcaption class="credito">Bastidores do trabalho.</figcaption>
+          <div class="foto r-4x5"><img src="foto-sobre.jpg" alt="Laura Alcântara de perfil, de óculos, em uma varanda cercada de árvores" style="object-position: 50% 60%"></div>
+          <figcaption class="credito">Sempre de olho no detalhe.</figcaption>
         </figure>
         <div class="revelar">
           <div class="sobre-texto">
-            <p>Oi, eu sou a Laura! Psicóloga e sócia de uma clínica em Limeira.</p>
-            <p>Comecei cuidando do site e do Instagram da minha clínica. Hoje faço o mesmo para outras marcas, com o olhar de quem entende de gente.</p>
+            <p>Oi, eu sou a Laura! Tenho 27 anos e moro no interior de São Paulo.</p>
+            <p>Além de criar conteúdo, sou psicóloga clínica. Por isso penso sempre em quem está do outro lado da tela: o que faz a pessoa confiar, se identificar e chamar.</p>
+            <p>Falo português e inglês com fluência e posso criar conteúdo nos dois idiomas. Amo viajar e viver coisas novas, e meu olhar é treinado para perceber o que é especial.</p>
           </div>
-          <p class="assinatura">Laura Alcântara <small>Sites · Conteúdo · Instagram</small></p>
+          <p class="assinatura">Laura Alcântara <small>Sites · Conteúdo · Instagram · PT / EN</small></p>
         </div>
       </div>
     </div>
@@ -745,7 +816,7 @@ const WHATSAPP = "5519983362423";
 
 // Serviços (numerados sozinhos, na ordem)
 const SERVICOS = [
-  { titulo: "Sites", descricao: "Site completo, rápido e bonito no celular, com domínio próprio e botão direto pro WhatsApp." },
+  { titulo: "Sites", descricao: "Versão para computador e celular, com domínio próprio e botão direto pro WhatsApp." },
   { titulo: "Gestão de Instagram", descricao: "Planejamento do mês, posts, legendas e calendário de datas importantes do seu nicho." },
   { titulo: "Conteúdo de divulgação", descricao: "Vídeos e fotos com cara de vida real, gravados e editados por mim." },
   { titulo: "Presença no Google", descricao: "Perfil de empresa no Google montado e organizado, para te acharem na sua cidade." }
@@ -759,13 +830,19 @@ const SITES = [
   { nome: "DS Fisioterapia e Bem-Estar", tipo: "Massagem e fisioterapia", descricao: "Massagens em destaque e agendamento fácil.", link: "", print: "" }
 ];
 
-// Exemplos de posts do Instagram (4 por linha). "imagem": arquivo do post (ex.: "post-1.jpg").
-// Vazio mostra o bloco neutro. "link" (opcional) abre o post no Instagram.
+// Fotos e posts (5 por linha no computador, 2 no celular).
+// "imagem": arquivo na pasta marcas (ou MIDIA + arquivo do site em inglês). "link" é opcional.
 const POSTS = [
-  { imagem: "", tema: "Post educativo", link: "" },
-  { imagem: "", tema: "Carrossel de dicas", link: "" },
-  { imagem: "", tema: "Bastidores", link: "" },
-  { imagem: "", tema: "Data comemorativa", link: "" }
+  { imagem: "post-fono.jpg", alt: "Post de carrossel da Clínica Zelo: 5 sinais de que a fala precisa de atenção", link: "" },
+  { imagem: "post-terapias.jpg", alt: "Post da Clínica Zelo com a fachada: as terapias conversam entre si", link: "" },
+  { imagem: "post-psicopedagogo.jpg", alt: "Post da Clínica Zelo de Dia do Psicopedagogo", link: "" },
+  { imagem: MIDIA + "photo-5.jpg", alt: "Barca de sashimi no gelo com salmão, atum e polvo", link: "" },
+  { imagem: MIDIA + "photo-1.jpg", alt: "Suíte em chalé com cisnes de toalha na cama e porta de vidro para o bosque", link: "" },
+  { imagem: MIDIA + "photo-6.jpg", alt: "Petit gâteau com sorvete de baunilha", link: "" },
+  { imagem: MIDIA + "photo-2.jpg", alt: "Quarto aconchegante com paredes de pedra, luz quente e poltrona de pelego", link: "" },
+  { imagem: MIDIA + "photo-7.jpg", alt: "Sushi de salmão maçaricado em prato de cerâmica azul", link: "" },
+  { imagem: MIDIA + "photo-3.jpg", alt: "Bandeja na banheira com vinho tinto, vinho branco e uma vela", link: "" },
+  { imagem: MIDIA + "photo-8.jpg", alt: "Mesa cheia de potinhos de geleia caseira", link: "" }
 ];
 
 // Vídeos: "video" toca direto na página; "capa" é a imagem antes do play.
@@ -842,8 +919,8 @@ $("#sites-grade").innerHTML = SITES.map((s) => {
 }).join("");
 
 $("#posts").innerHTML = POSTS.map((p) => {
-  const bloco = blocoFoto(p.imagem, "r-4x5", "post 4:5", p.tema);
-  return `<li class="post">${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${bloco}</a>` : bloco}<p>${esc(p.tema)}</p></li>`;
+  const bloco = blocoFoto(p.imagem, "r-4x5", "foto 4:5", p.alt);
+  return `<li class="post">${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${bloco}</a>` : bloco}</li>`;
 }).join("");
 
 $("#destaques-grade").innerHTML = DESTAQUES.map((d) => `
