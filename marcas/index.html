@@ -498,6 +498,8 @@
   @media (max-width: 880px) { .fotos-grade { grid-template-columns: repeat(2, 1fr); max-width: 480px; gap: 18px; } }
   /* ============ SITES E PERFIS (versão marcas) ============ */
   .r-16x10 { aspect-ratio: 16 / 10; }
+  .r-site { aspect-ratio: 1280 / 584; }
+  .r-site video { width: 100%; height: 100%; object-fit: cover; display: block; }
   #sites { background: var(--butter-lavado); }
   .sites-grade { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .site { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--branco); border-radius: var(--raio); padding: 14px 14px 22px; box-shadow: var(--sombra); transition: transform .25s; }
@@ -560,7 +562,7 @@
   .servico p { font-size: 14px; line-height: 1.55; margin-bottom: 14px; }
   .servico-preco { font-size: 10px; }
 
-  .sites-grade { max-width: 700px; margin: 0 auto; gap: 24px; }
+  .sites-grade { max-width: 920px; margin: 0 auto; gap: 24px; }
   .site { padding: 10px 10px 16px; }
   .site .foto { margin-bottom: 12px; }
   .site h3 { font-size: 19px; margin-bottom: 4px; }
@@ -824,10 +826,10 @@ const SERVICOS = [
 const PRECO_SERVICOS = "Valores sob consulta";
 
 // Sites do portfólio. "link" vazio mostra "Em breve".
-// "print": caminho de uma imagem do site (ex.: "print-zelo.jpg"). Vazio mostra o bloco neutro.
+// "video": gravação de tela do site (toca sozinho, sem som). "print": imagem que aparece antes do vídeo carregar.
 const SITES = [
-  { nome: "Clínica Zelo", tipo: "Clínica interdisciplinar", descricao: "Terapias, convênio e contato direto pelo WhatsApp.", link: "https://clinicainterdisciplinarzelo.com", print: "" },
-  { nome: "DS Fisioterapia e Bem-Estar", tipo: "Massagem e fisioterapia", descricao: "Massagens em destaque e agendamento fácil.", link: "", print: "" }
+  { nome: "Clínica Zelo", tipo: "Clínica interdisciplinar", descricao: "Terapias, convênio e contato direto pelo WhatsApp.", link: "https://clinicainterdisciplinarzelo.com", video: "site-zelo.mp4", print: "site-zelo.jpg" },
+  { nome: "Dr. Agnaldo Alcântara", tipo: "Consultório médico", descricao: "Neurocirurgião em Limeira, com agendamento fácil.", link: "https://lauragalc.github.io/dragnaldoalcantara/", video: "site-agnaldo.mp4", print: "site-agnaldo.jpg" }
 ];
 
 // Fotos e posts (5 por linha no computador, 2 no celular).
@@ -906,7 +908,9 @@ $("#servicos-grade").innerHTML = SERVICOS.map((s, i) => `
 
 $("#sites-grade").innerHTML = SITES.map((s) => {
   const miolo = `
-    ${blocoFoto(s.print, "r-16x10", "print do site", "Página inicial do site " + s.nome)}
+    ${s.video
+      ? `<div class="foto r-site"><video src="${esc(s.video)}" poster="${esc(s.print)}" muted loop playsinline autoplay preload="metadata" aria-label="Navegando pelo site ${esc(s.nome)}"></video></div>`
+      : blocoFoto(s.print, "r-16x10", "print do site", "Página inicial do site " + s.nome)}
     <div class="site-corpo">
       <span class="site-tipo">${esc(s.tipo)}</span>
       <h3>${esc(s.nome)}</h3>
